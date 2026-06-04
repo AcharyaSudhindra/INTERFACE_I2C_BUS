@@ -1,0 +1,609 @@
+$date
+   Wed Jun  3 22:29:53 2026
+$end
+
+$version
+  2025.2
+  $dumpfile ("i2c_sim.vcd") 
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module tb_i2c_system $end
+$var reg 1 ! clk $end
+$var reg 1 " rst_n $end
+$var reg 1 # start_demo $end
+$var wire 8 $ eeprom_data [7:0] $end
+$var wire 1 % demo_done $end
+$var wire 1 & error_flag $end
+$var wire 1 ' sda $end
+$var wire 1 ( scl $end
+$scope module dut $end
+$var wire 1 ) clk $end
+$var wire 1 * rst_n $end
+$var wire 1 + start_demo $end
+$var wire 8 $ eeprom_data [7:0] $end
+$var wire 1 % demo_done $end
+$var wire 1 & error_flag $end
+$var wire 1 ' sda $end
+$var wire 1 ( scl $end
+$var reg 1 , i2c_enable $end
+$var reg 1 - i2c_rw $end
+$var reg 7 . i2c_addr [6:0] $end
+$var reg 8 / i2c_data_in [7:0] $end
+$var wire 8 0 i2c_data_out [7:0] $end
+$var wire 1 1 i2c_busy $end
+$var wire 1 2 i2c_ack_error $end
+$var reg 4 3 state [3:0] $end
+$var reg 8 4 captured_data [7:0] $end
+$var reg 16 5 delay_cnt [15:0] $end
+$scope module master_inst $end
+$var wire 1 ) clk $end
+$var wire 1 * rst_n $end
+$var wire 1 6 enable $end
+$var wire 1 7 rw $end
+$var wire 7 8 addr [6:0] $end
+$var wire 8 9 data_in [7:0] $end
+$var reg 8 : data_out [7:0] $end
+$var reg 1 ; busy $end
+$var reg 1 < ack_error $end
+$var wire 1 ' sda $end
+$var wire 1 ( scl $end
+$var reg 4 = state [3:0] $end
+$var reg 4 > next_state [3:0] $end
+$var reg 16 ? clk_count [15:0] $end
+$var reg 2 @ i2c_phase [1:0] $end
+$var reg 1 A i2c_clk_en $end
+$var reg 8 B tx_data [7:0] $end
+$var reg 8 C rx_data [7:0] $end
+$var reg 3 D bit_count [2:0] $end
+$var reg 1 E sda_out $end
+$var reg 1 F sda_dir $end
+$var reg 1 G scl_out $end
+$upscope $end
+$upscope $end
+$scope module oled_mock $end
+$var wire 1 ' sda $end
+$var wire 1 ( scl $end
+$var reg 8 H shift_reg [7:0] $end
+$var reg 4 I bit_count [3:0] $end
+$var reg 1 J sda_out $end
+$var reg 1 K sda_dir $end
+$var reg 1 L is_addressed $end
+$var reg 1 M is_read $end
+$var reg 1 N start_flag $end
+$var reg 1 O stop_flag $end
+$upscope $end
+$scope module eeprom_mock $end
+$var wire 1 ' sda $end
+$var wire 1 ( scl $end
+$var reg 8 P shift_reg [7:0] $end
+$var reg 4 Q bit_count [3:0] $end
+$var reg 1 R sda_out $end
+$var reg 1 S sda_dir $end
+$var reg 1 T is_addressed $end
+$var reg 1 U is_read $end
+$var reg 1 V start_flag $end
+$var reg 1 W stop_flag $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+0"
+0#
+b0 $
+0%
+0&
+x'
+1(
+0)
+0*
+0+
+0,
+0-
+b0 .
+b0 /
+b0 0
+01
+02
+b0 3
+b0 4
+b0 5
+06
+07
+b0 8
+b0 9
+b0 :
+0;
+0<
+b0 =
+bx >
+b0 ?
+b0 @
+0A
+b0 B
+b0 C
+b0 D
+1E
+1F
+1G
+bx H
+bx I
+xJ
+xK
+xL
+xM
+xN
+xO
+bx P
+bx Q
+xR
+xS
+xT
+xU
+xV
+xW
+$end
+
+#10000
+1!
+1)
+
+#20000
+0!
+0)
+
+#30000
+1!
+1)
+
+#40000
+0!
+0)
+
+#50000
+1!
+1)
+
+#60000
+0!
+0)
+
+#70000
+1!
+1)
+
+#80000
+0!
+0)
+
+#90000
+1!
+1)
+
+#100000
+0!
+1"
+0)
+1*
+
+#110000
+1!
+1)
+b1 ?
+
+#120000
+0!
+0)
+
+#130000
+1!
+1)
+b10 ?
+
+#140000
+0!
+0)
+
+#150000
+1!
+1)
+b11 ?
+
+#160000
+0!
+0)
+
+#170000
+1!
+1)
+b100 ?
+
+#180000
+0!
+0)
+
+#190000
+1!
+1)
+b101 ?
+
+#200000
+0!
+1#
+0)
+1+
+
+#210000
+1!
+1)
+1,
+b111100 .
+b10100101 /
+b1 3
+16
+b111100 8
+b10100101 9
+b110 ?
+
+#220000
+0!
+0#
+0)
+0+
+
+#230000
+1!
+1)
+b111 ?
+
+#240000
+0!
+0)
+
+#250000
+1!
+1)
+b1000 ?
+
+#260000
+0!
+0)
+
+#270000
+1!
+1)
+b1001 ?
+
+#280000
+0!
+0)
+
+#290000
+1!
+1)
+b1010 ?
+
+#300000
+0!
+0)
+
+#310000
+1!
+1)
+b1011 ?
+
+#320000
+0!
+0)
+
+#330000
+1!
+1)
+b1100 ?
+
+#340000
+0!
+0)
+
+#350000
+1!
+1)
+b1101 ?
+
+#360000
+0!
+0)
+
+#370000
+1!
+1)
+b1110 ?
+
+#380000
+0!
+0)
+
+#390000
+1!
+1)
+b1111 ?
+
+#400000
+0!
+0)
+
+#410000
+1!
+1)
+b10000 ?
+
+#420000
+0!
+0)
+
+#430000
+1!
+1)
+b10001 ?
+
+#440000
+0!
+0)
+
+#450000
+1!
+1)
+b10010 ?
+
+#460000
+0!
+0)
+
+#470000
+1!
+1)
+b10011 ?
+
+#480000
+0!
+0)
+
+#490000
+1!
+1)
+b10100 ?
+
+#500000
+0!
+0)
+
+#510000
+1!
+1)
+b10101 ?
+
+#520000
+0!
+0)
+
+#530000
+1!
+1)
+b10110 ?
+
+#540000
+0!
+0)
+
+#550000
+1!
+1)
+b10111 ?
+
+#560000
+0!
+0)
+
+#570000
+1!
+1)
+b11000 ?
+
+#580000
+0!
+0)
+
+#590000
+1!
+1)
+b11001 ?
+
+#600000
+0!
+0)
+
+#610000
+1!
+1)
+b11010 ?
+
+#620000
+0!
+0)
+
+#630000
+1!
+1)
+b11011 ?
+
+#640000
+0!
+0)
+
+#650000
+1!
+1)
+b11100 ?
+
+#660000
+0!
+0)
+
+#670000
+1!
+1)
+b11101 ?
+
+#680000
+0!
+0)
+
+#690000
+1!
+1)
+b11110 ?
+
+#700000
+0!
+0)
+
+#710000
+1!
+1)
+b11111 ?
+
+#720000
+0!
+0)
+
+#730000
+1!
+1)
+b100000 ?
+
+#740000
+0!
+0)
+
+#750000
+1!
+1)
+b100001 ?
+
+#760000
+0!
+0)
+
+#770000
+1!
+1)
+b100010 ?
+
+#780000
+0!
+0)
+
+#790000
+1!
+1)
+b100011 ?
+
+#800000
+0!
+0)
+
+#810000
+1!
+1)
+b100100 ?
+
+#820000
+0!
+0)
+
+#830000
+1!
+1)
+b100101 ?
+
+#840000
+0!
+0)
+
+#850000
+1!
+1)
+b100110 ?
+
+#860000
+0!
+0)
+
+#870000
+1!
+1)
+b100111 ?
+
+#880000
+0!
+0)
+
+#890000
+1!
+1)
+b101000 ?
+
+#900000
+0!
+0)
+
+#910000
+1!
+1)
+b101001 ?
+
+#920000
+0!
+0)
+
+#930000
+1!
+1)
+b101010 ?
+
+#940000
+0!
+0)
+
+#950000
+1!
+1)
+b101011 ?
+
+#960000
+0!
+0)
+
+#970000
+1!
+1)
+b101100 ?
+
+#980000
+0!
+0)
+
+#990000
+1!
+1)
+b101101 ?
+
+#1000000
+0!
+0)

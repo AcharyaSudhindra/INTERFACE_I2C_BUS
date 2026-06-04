@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../Vivado/2025.2/Vivado/data/rsb/busdef" \
+"../../../../INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/i2c_master.v" \
+"../../../../INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/mock_i2c_slave.v" \
+"../../../../INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/top_controller.v" \
+"../../../../INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

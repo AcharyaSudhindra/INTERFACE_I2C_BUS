@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1780655566">
+  <File Type="PA-TCL" Name="tb_i2c_system.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="tb_i2c_system_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="tb_i2c_system_reports.tcl"/>
+  <File Type="RDS-RDS" Name="tb_i2c_system.vds"/>
+  <File Type="RDS-UTIL" Name="tb_i2c_system_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="tb_i2c_system_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="tb_i2c_system.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="tb_i2c_system_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="tb_i2c_system_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/interface i2c/i2c_master.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/interface i2c/i2c_master.v"/>
+        <Attr Name="ImportTime" Val="1780501987"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/interface i2c/mock_i2c_slave.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/interface i2c/mock_i2c_slave.v"/>
+        <Attr Name="ImportTime" Val="1780502018"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/interface i2c/top_controller.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/interface i2c/top_controller.v"/>
+        <Attr Name="ImportTime" Val="1780502004"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/interface i2c/tb_i2c_system.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/interface i2c/tb_i2c_system.v"/>
+        <Attr Name="ImportTime" Val="1780502031"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="tb_i2c_system"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

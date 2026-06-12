@@ -50,15 +50,26 @@ module mock_i2c_slave #(
                 end else if (bit_count == 7) begin
                     is_read <= sda;
                     if (shift_reg[6:0] == SLAVE_ADDR) begin
-                        is_addressed <= 1;
                         sda_dir <= 1;
                         sda_out <= 0; // ACK
                     end
                     bit_count <= bit_count + 1;
                 end else if (bit_count == 8) begin
-                    sda_dir <= 0;
-                    bit_count <= 0;
-                    if (is_read) shift_reg <= READ_DATA;
+                    if (shift_reg[6:0] == SLAVE_ADDR) begin
+                        is_addressed <= 1;
+                        if (is_read) begin
+                            shift_reg <= READ_DATA;
+                            sda_dir <= 1;
+                            sda_out <= READ_DATA[7];
+                            bit_count <= 1;
+                        end else begin
+                            sda_dir <= 0;
+                            bit_count <= 0;
+                        end
+                    end else begin
+                        sda_dir <= 0;
+                        bit_count <= 0;
+                    end
                 end
             end else begin
                 // Data phase
@@ -75,15 +86,16 @@ module mock_i2c_slave #(
                     end
                 end else begin
                     // Write phase (slave receives)
-                    if (bit_count < 8) begin
+                    if (bit_count < 7) begin
                         sda_dir <= 0;
                         shift_reg[7 - bit_count] <= sda;
                         bit_count <= bit_count + 1;
-                    end else if (bit_count == 8) begin
+                    end else if (bit_count == 7) begin
                         sda_dir <= 1;
                         sda_out <= 0; // ACK
+                        shift_reg[0] <= sda;
                         bit_count <= bit_count + 1;
-                    end else if (bit_count == 9) begin
+                    end else if (bit_count == 8) begin
                         sda_dir <= 0;
                         bit_count <= 0;
                         is_addressed <= 0; // End after 1 byte

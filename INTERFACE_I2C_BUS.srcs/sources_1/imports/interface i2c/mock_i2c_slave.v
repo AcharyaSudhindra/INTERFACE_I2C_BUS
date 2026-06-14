@@ -49,9 +49,13 @@ module mock_i2c_slave #(
                     bit_count <= bit_count + 1;
                 end else if (bit_count == 7) begin
                     is_read <= sda;
+                    $display("Time: %0t, SLAVE_ADDR: %h, shift_reg: %h", $time, SLAVE_ADDR, shift_reg[6:0]);
                     if (shift_reg[6:0] == SLAVE_ADDR) begin
                         sda_dir <= 1;
                         sda_out <= 0; // ACK
+                        $display("ACK ASSERTED!");
+                    end else begin
+                        $display("NACK! shift_reg mismatch.");
                     end
                     bit_count <= bit_count + 1;
                 end else if (bit_count == 8) begin

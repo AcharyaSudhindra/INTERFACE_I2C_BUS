@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1780655566">
-  <File Type="PA-TCL" Name="tb_i2c_system.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="tb_i2c_system_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="tb_i2c_system_reports.tcl"/>
-  <File Type="RDS-RDS" Name="tb_i2c_system.vds"/>
   <File Type="RDS-UTIL" Name="tb_i2c_system_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="tb_i2c_system_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="tb_i2c_system.tcl"/>
+  <File Type="RDS-RDS" Name="tb_i2c_system.vds"/>
   <File Type="RDS-DCP" Name="tb_i2c_system.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="tb_i2c_system_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="tb_i2c_system_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/interface i2c/i2c_master.v">

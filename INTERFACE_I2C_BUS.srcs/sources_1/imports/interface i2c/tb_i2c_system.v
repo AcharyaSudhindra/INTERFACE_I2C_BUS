@@ -47,6 +47,24 @@ module tb_i2c_system;
         .scl(scl)
     );
 
+    // Instantiate Mock Slave 3 (RTC)
+    mock_i2c_slave #(
+        .SLAVE_ADDR(7'h68),
+        .READ_DATA(8'h12) // Mock time value
+    ) rtc_mock (
+        .sda(sda),
+        .scl(scl)
+    );
+
+    // Instantiate Mock Slave 4 (Temp Sensor)
+    mock_i2c_slave #(
+        .SLAVE_ADDR(7'h48),
+        .READ_DATA(8'h1A) // Mock temperature value
+    ) temp_mock (
+        .sda(sda),
+        .scl(scl)
+    );
+
     // Clock generation (50 MHz)
     initial begin
         clk = 0;

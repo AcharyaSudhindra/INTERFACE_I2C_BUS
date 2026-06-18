@@ -29,42 +29,25 @@ module tb_i2c_system;
         .scl(scl)
     );
 
-    // Instantiate Mock Slave 1 (OLED)
-    mock_i2c_slave #(
+    // I2C Devices on the bus:
+    // Instantiate OLED Display Slave (Address: 0x3C)
+    i2c_slave #(
         .SLAVE_ADDR(7'h3C),
         .READ_DATA(8'h00)
-    ) oled_mock (
+    ) oled_slave (
         .sda(sda),
         .scl(scl)
     );
 
-    // Instantiate Mock Slave 2 (EEPROM)
-    mock_i2c_slave #(
+    // Instantiate EEPROM Slave (Address: 0x50)
+    // Setup to return 0x42 when read
+    i2c_slave #(
         .SLAVE_ADDR(7'h50),
-        .READ_DATA(8'h42) // Expected read back value
-    ) eeprom_mock (
+        .READ_DATA(8'h42)
+    ) eeprom_slave (
         .sda(sda),
         .scl(scl)
     );
-
-    // Instantiate Mock Slave 3 (RTC)
-    mock_i2c_slave #(
-        .SLAVE_ADDR(7'h68),
-        .READ_DATA(8'h12) // Mock time value
-    ) rtc_mock (
-        .sda(sda),
-        .scl(scl)
-    );
-
-    // Instantiate Mock Slave 4 (Temp Sensor)
-    mock_i2c_slave #(
-        .SLAVE_ADDR(7'h48),
-        .READ_DATA(8'h1A) // Mock temperature value
-    ) temp_mock (
-        .sda(sda),
-        .scl(scl)
-    );
-
     // Clock generation (50 MHz)
     initial begin
         clk = 0;

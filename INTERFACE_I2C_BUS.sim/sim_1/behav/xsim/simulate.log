@@ -1,1 +1,9 @@
 Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+The simulator has terminated in an unexpected manner with exit code 1073807364.  Please review the simulation log (xsim.log) for details.

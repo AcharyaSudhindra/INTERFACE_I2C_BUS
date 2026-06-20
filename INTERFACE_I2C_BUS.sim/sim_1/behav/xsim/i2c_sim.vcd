@@ -1,5 +1,5 @@
 $date
-   Thu Jun 18 15:44:16 2026
+   Fri Jun 19 12:57:57 2026
 $end
 
 $version
@@ -15,82 +15,93 @@ $scope module tb_i2c_system $end
 $var reg 1 ! clk $end
 $var reg 1 " rst_n $end
 $var reg 1 # start_demo $end
-$var wire 8 $ eeprom_data [7:0] $end
-$var wire 1 % demo_done $end
-$var wire 1 & error_flag $end
-$var wire 1 ' sda $end
-$var wire 1 ( scl $end
+$var reg 8 $ oled_wdata [7:0] $end
+$var reg 8 % eeprom_ptr [7:0] $end
+$var wire 8 & eeprom_data [7:0] $end
+$var wire 1 ' demo_done $end
+$var wire 1 ( error_flag $end
+$var wire 1 ) sda $end
+$var wire 1 * scl $end
+$var wire 4 + master_state [3:0] $end
+$var wire 4 , ctrl_state [3:0] $end
+$var wire 1 - oled_addressed $end
+$var wire 1 . eeprom_addressed $end
+$var wire 8 / oled_shift_reg [7:0] $end
+$var wire 8 0 eeprom_shift_reg [7:0] $end
 $scope module dut $end
-$var wire 1 ) clk $end
-$var wire 1 * rst_n $end
-$var wire 1 + start_demo $end
-$var wire 8 $ eeprom_data [7:0] $end
-$var wire 1 % demo_done $end
-$var wire 1 & error_flag $end
-$var wire 1 ' sda $end
-$var wire 1 ( scl $end
-$var reg 1 , i2c_enable $end
-$var reg 1 - i2c_rw $end
-$var reg 7 . i2c_addr [6:0] $end
-$var reg 8 / i2c_data_in [7:0] $end
-$var wire 8 0 i2c_data_out [7:0] $end
-$var wire 1 1 i2c_busy $end
-$var wire 1 2 i2c_ack_error $end
-$var reg 4 3 state [3:0] $end
-$var reg 8 4 captured_data [7:0] $end
-$var reg 16 5 delay_cnt [15:0] $end
-$scope module master_inst $end
-$var wire 1 ) clk $end
-$var wire 1 * rst_n $end
-$var wire 1 6 enable $end
-$var wire 1 7 rw $end
-$var wire 7 8 addr [6:0] $end
-$var wire 8 9 data_in [7:0] $end
-$var reg 8 : data_out [7:0] $end
-$var reg 1 ; busy $end
-$var reg 1 < ack_error $end
-$var wire 1 ' sda $end
-$var wire 1 ( scl $end
+$var wire 1 1 clk $end
+$var wire 1 2 rst_n $end
+$var wire 1 3 start_demo $end
+$var wire 8 4 oled_wdata [7:0] $end
+$var wire 8 5 eeprom_ptr [7:0] $end
+$var wire 8 & eeprom_data [7:0] $end
+$var wire 1 ' demo_done $end
+$var wire 1 ( error_flag $end
+$var wire 1 ) sda $end
+$var wire 1 * scl $end
+$var reg 1 6 i2c_enable $end
+$var reg 1 7 i2c_rw $end
+$var reg 7 8 i2c_addr [6:0] $end
+$var reg 8 9 i2c_data_in [7:0] $end
+$var wire 8 : i2c_data_out [7:0] $end
+$var wire 1 ; i2c_busy $end
+$var wire 1 < i2c_ack_error $end
 $var reg 4 = state [3:0] $end
-$var reg 4 > next_state [3:0] $end
-$var reg 16 ? clk_count [15:0] $end
-$var reg 2 @ i2c_phase [1:0] $end
-$var reg 1 A i2c_clk_en $end
-$var reg 8 B tx_data [7:0] $end
-$var reg 8 C rx_data [7:0] $end
-$var reg 3 D bit_count [2:0] $end
-$var reg 1 E sda_out $end
-$var reg 1 F sda_dir $end
-$var reg 1 G scl_out $end
+$var reg 8 > captured_data [7:0] $end
+$var reg 16 ? delay_cnt [15:0] $end
+$scope module master_inst $end
+$var wire 1 1 clk $end
+$var wire 1 2 rst_n $end
+$var wire 1 @ enable $end
+$var wire 1 A rw $end
+$var wire 7 B addr [6:0] $end
+$var wire 8 C data_in [7:0] $end
+$var reg 8 D data_out [7:0] $end
+$var reg 1 E busy $end
+$var reg 1 F ack_error $end
+$var wire 1 ) sda $end
+$var wire 1 * scl $end
+$var reg 4 G state [3:0] $end
+$var reg 4 H next_state [3:0] $end
+$var reg 16 I clk_count [15:0] $end
+$var reg 2 J i2c_phase [1:0] $end
+$var reg 1 K i2c_clk_en $end
+$var reg 8 L tx_data [7:0] $end
+$var reg 8 M rx_data [7:0] $end
+$var reg 3 N bit_count [2:0] $end
+$var reg 1 O sda_out $end
+$var reg 1 P sda_dir $end
+$var reg 1 Q scl_out $end
+$var reg 1 R start_pending $end
 $upscope $end
 $upscope $end
 $scope module oled_slave $end
-$var wire 1 ' sda $end
-$var wire 1 ( scl $end
-$var reg 8 H shift_reg [7:0] $end
-$var reg 4 I bit_count [3:0] $end
-$var reg 1 J sda_out $end
-$var reg 1 K sda_dir $end
-$var reg 1 L is_addressed $end
-$var reg 1 M is_read $end
-$var reg 8 N start_count [7:0] $end
-$var reg 8 O stop_count [7:0] $end
-$var reg 8 P last_start_count [7:0] $end
-$var reg 8 Q last_stop_count [7:0] $end
+$var wire 1 ) sda $end
+$var wire 1 * scl $end
+$var reg 1 S sda_out $end
+$var reg 1 T sda_dir $end
+$var reg 8 U shift_reg [7:0] $end
+$var reg 4 V bit_count [3:0] $end
+$var reg 1 W is_addressed $end
+$var reg 1 X is_read $end
+$var reg 8 Y start_count [7:0] $end
+$var reg 8 Z stop_count [7:0] $end
+$var reg 8 [ last_start_count [7:0] $end
+$var reg 8 \ last_stop_count [7:0] $end
 $upscope $end
 $scope module eeprom_slave $end
-$var wire 1 ' sda $end
-$var wire 1 ( scl $end
-$var reg 8 R shift_reg [7:0] $end
-$var reg 4 S bit_count [3:0] $end
-$var reg 1 T sda_out $end
-$var reg 1 U sda_dir $end
-$var reg 1 V is_addressed $end
-$var reg 1 W is_read $end
-$var reg 8 X start_count [7:0] $end
-$var reg 8 Y stop_count [7:0] $end
-$var reg 8 Z last_start_count [7:0] $end
-$var reg 8 [ last_stop_count [7:0] $end
+$var wire 1 ) sda $end
+$var wire 1 * scl $end
+$var reg 1 ] sda_out $end
+$var reg 1 ^ sda_dir $end
+$var reg 8 _ shift_reg [7:0] $end
+$var reg 4 ` bit_count [3:0] $end
+$var reg 1 a is_addressed $end
+$var reg 1 b is_read $end
+$var reg 8 c start_count [7:0] $end
+$var reg 8 d stop_count [7:0] $end
+$var reg 8 e last_start_count [7:0] $end
+$var reg 8 f last_stop_count [7:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -100,23 +111,23 @@ $dumpvars
 0!
 0"
 0#
-b0 $
-0%
-0&
-1'
-1(
-0)
-0*
-0+
-0,
+b10100101 $
+b0 %
+b0 &
+0'
+0(
+1)
+1*
+b0 +
+b0 ,
 0-
-b0 .
-b0 /
-b0 0
+0.
+b1000000 /
+b1000000 0
 01
 02
-b0 3
-b0 4
+03
+b10100101 4
 b0 5
 06
 07
@@ -126,488 +137,606 @@ b0 :
 0;
 0<
 b0 =
-bx >
+b0 >
 b0 ?
-b0 @
+0@
 0A
 b0 B
 b0 C
 b0 D
-1E
-1F
-1G
-b1000000 H
+0E
+0F
+b0 G
+bx H
 b0 I
-0J
+b0 J
 0K
-0L
-0M
+b0 L
+b0 M
 b0 N
-b1 O
-b0 P
-b0 Q
-b1000000 R
-b0 S
+1O
+1P
+1Q
+0R
+1S
 0T
-0U
-0V
+b1000000 U
+b0 V
 0W
-b0 X
-b1 Y
-b0 Z
+0X
+b0 Y
+b1 Z
 b0 [
+b0 \
+1]
+0^
+b1000000 _
+b0 `
+0a
+0b
+b0 c
+b1 d
+b0 e
+b0 f
 $end
 
 #10000
 1!
-1)
+11
 
 #20000
 0!
-0)
+01
 
 #30000
 1!
-1)
+11
 
 #40000
 0!
-0)
+01
 
 #50000
 1!
-1)
+11
 
 #60000
 0!
-0)
+01
 
 #70000
 1!
-1)
+11
 
 #80000
 0!
-0)
+01
 
 #90000
 1!
-1)
+11
 
 #100000
 0!
-1"
-0)
-1*
+01
 
 #110000
 1!
-1)
-b1 ?
+11
 
 #120000
 0!
-0)
+01
 
 #130000
 1!
-1)
-b10 ?
+11
 
 #140000
 0!
-0)
+01
 
 #150000
 1!
-1)
-b11 ?
+11
 
 #160000
 0!
-0)
+01
 
 #170000
 1!
-1)
-b100 ?
+11
 
 #180000
 0!
-0)
+01
 
 #190000
 1!
-1)
-b101 ?
+1"
+11
+12
+b1 I
 
 #200000
 0!
-1#
-0)
-1+
+01
 
 #210000
 1!
-1)
-1,
-b111100 .
-b10100101 /
-b1 3
-16
-b111100 8
-b10100101 9
-b110 ?
+11
+b0 I
+b1 J
+1K
 
 #220000
 0!
-0#
-0)
-0+
+01
 
 #230000
 1!
-1)
-b111 ?
+11
+b1 I
+0K
 
 #240000
 0!
-0)
+01
 
 #250000
 1!
-1)
-b1000 ?
+11
+b0 I
+b10 J
+1K
 
 #260000
 0!
-0)
+01
 
 #270000
 1!
-1)
-b1001 ?
+11
+b1 I
+0K
 
 #280000
 0!
-0)
+01
 
 #290000
 1!
-1)
-b1010 ?
+11
+b0 I
+b11 J
+1K
 
 #300000
 0!
-0)
+01
 
 #310000
 1!
-1)
-b1011 ?
+11
+b1 I
+0K
 
 #320000
 0!
-0)
+01
 
 #330000
 1!
-1)
-b1100 ?
+11
+b0 I
+b0 J
+1K
 
 #340000
 0!
-0)
+01
 
 #350000
 1!
-1)
-b1101 ?
+11
+b1 I
+0K
 
 #360000
 0!
-0)
+01
 
 #370000
 1!
-1)
-b1110 ?
+11
+b0 I
+b1 J
+1K
 
 #380000
 0!
-0)
+01
 
 #390000
 1!
-1)
-b1111 ?
+11
+b1 I
+0K
 
 #400000
 0!
-0)
+01
 
 #410000
 1!
-1)
-b10000 ?
+11
+b0 I
+b10 J
+1K
+
+#411000
+1#
+13
 
 #420000
 0!
-0)
+01
 
 #430000
 1!
-1)
-b10001 ?
+b1 ,
+11
+16
+b111100 8
+b10100101 9
+b1 =
+1@
+b111100 B
+b10100101 C
+b1 I
+0K
 
 #440000
 0!
-0)
+01
 
 #450000
 1!
-1)
-b10010 ?
+11
+b0 I
+b11 J
+1K
+1R
 
 #460000
 0!
-0)
+01
 
 #470000
 1!
-1)
-b10011 ?
+b1 +
+11
+1;
+1E
+b1 G
+b1 I
+0K
+b1111000 L
+0R
 
 #480000
 0!
-0)
+01
 
 #490000
 1!
-1)
-b10100 ?
+b10 ,
+11
+06
+b10 =
+0@
+b0 I
+b0 J
+1K
 
 #500000
 0!
-0)
+01
 
 #510000
 1!
-1)
-b10101 ?
+11
+b1 I
+0K
+
+#511000
+0#
+03
 
 #520000
 0!
-0)
+01
 
 #530000
 1!
-1)
-b10110 ?
+11
+b0 I
+b1 J
+1K
 
 #540000
 0!
-0)
+01
 
 #550000
 1!
-1)
-b10111 ?
+11
+b1 I
+0K
 
 #560000
 0!
-0)
+01
 
 #570000
 1!
-1)
-b11000 ?
+11
+b0 I
+b10 J
+1K
 
 #580000
 0!
-0)
+01
 
 #590000
 1!
-1)
-b11001 ?
+0)
+11
+b1 I
+0K
+0O
+b1 Y
+b1 c
 
 #600000
 0!
-0)
+01
 
 #610000
 1!
-1)
-b11010 ?
+11
+b0 I
+b11 J
+1K
 
 #620000
 0!
-0)
+01
 
 #630000
 1!
-1)
-b11011 ?
+0*
+b10 +
+11
+b10 G
+b1 I
+0K
+b111 N
+0Q
+b1 [
+b1 e
 
 #640000
 0!
-0)
+01
 
 #650000
 1!
-1)
-b11100 ?
+11
+b0 I
+b0 J
+1K
 
 #660000
 0!
-0)
+01
 
 #670000
 1!
-1)
-b11101 ?
+11
+b1 I
+0K
 
 #680000
 0!
-0)
+01
 
 #690000
 1!
-1)
-b11110 ?
+11
+b0 I
+b1 J
+1K
 
 #700000
 0!
-0)
+01
 
 #710000
 1!
-1)
-b11111 ?
+1*
+b0 /
+b0 0
+11
+b1 I
+0K
+1Q
+b0 U
+b0 _
 
 #720000
 0!
-0)
+01
 
 #730000
 1!
-1)
-b100000 ?
+11
+b0 I
+b10 J
+1K
 
 #740000
 0!
-0)
+01
 
 #750000
 1!
-1)
-b100001 ?
+11
+b1 I
+0K
 
 #760000
 0!
-0)
+01
 
 #770000
 1!
-1)
-b100010 ?
+11
+b0 I
+b11 J
+1K
 
 #780000
 0!
-0)
+01
 
 #790000
 1!
-1)
-b100011 ?
+0*
+11
+b1 I
+0K
+b110 N
+0Q
+b1 \
+b1 f
 
 #800000
 0!
-0)
+01
 
 #810000
 1!
-1)
-b100100 ?
+11
+b0 I
+b0 J
+1K
 
 #820000
 0!
-0)
+01
 
 #830000
 1!
 1)
-b100101 ?
+11
+b1 I
+0K
+1O
 
 #840000
 0!
-0)
+01
 
 #850000
 1!
-1)
-b100110 ?
+11
+b0 I
+b1 J
+1K
 
 #860000
 0!
-0)
+01
 
 #870000
 1!
-1)
-b100111 ?
+1*
+b1000000 /
+b1000000 0
+11
+b1 I
+0K
+1Q
+b1000000 U
+b1000000 _
 
 #880000
 0!
-0)
+01
 
 #890000
 1!
-1)
-b101000 ?
+11
+b0 I
+b10 J
+1K
 
 #900000
 0!
-0)
+01
 
 #910000
 1!
-1)
-b101001 ?
+11
+b1 I
+0K
 
 #920000
 0!
-0)
+01
 
 #930000
 1!
-1)
-b101010 ?
+11
+b0 I
+b11 J
+1K
 
 #940000
 0!
-0)
+01
 
 #950000
 1!
-1)
-b101011 ?
+0*
+11
+b1 I
+0K
+b101 N
+0Q
+b1 V
+b1 `
 
 #960000
 0!
-0)
+01
 
 #970000
 1!
-1)
-b101100 ?
+11
+b0 I
+b0 J
+1K
 
 #980000
 0!
-0)
+01
 
 #990000
 1!
-1)
-b101101 ?
+11
+b1 I
+0K

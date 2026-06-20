@@ -1,9 +1,20 @@
 `timescale 1ns / 1ps
 
-module top_controller (
+module top_controller #(
+    // Clock / I2C frequency – override in testbench for fast simulation
+    parameter INPUT_CLK_FREQ = 50_000_000,  // System clock (50 MHz default)
+    parameter I2C_CLK_FREQ   = 100_000,     // I2C bus clock (100 kHz default)
+    // Inter-transaction delay in clock cycles (65535 default ≈ 1.3 ms @ 50 MHz)
+    // Set to a small value (e.g. 100) in the testbench for fast simulation.
+    parameter INTER_TX_DELAY = 16'hFFFF
+)(
     input  wire       clk,
     input  wire       rst_n,
     input  wire       start_demo,
+    
+    // Transaction payload (driven by testbench / tied on FPGA)
+    input  wire [7:0] oled_wdata,
+    input  wire [7:0] eeprom_ptr,
     
     // Outputs to observe states
     output wire [7:0] eeprom_data,
@@ -25,8 +36,8 @@ module top_controller (
     wire       i2c_ack_error;
     
     i2c_master #(
-        .INPUT_CLK_FREQ(50_000_000),
-        .I2C_FREQ(100_000)
+        .INPUT_CLK_FREQ(INPUT_CLK_FREQ),
+        .I2C_FREQ      (I2C_CLK_FREQ)
     ) master_inst (
         .clk(clk),
         .rst_n(rst_n),
@@ -79,7 +90,7 @@ module top_controller (
                         state <= S_WRITE_OLED;
                         i2c_addr <= 7'h3C;
                         i2c_rw <= 0;
-                        i2c_data_in <= 8'hA5; // dummy data
+                        i2c_data_in <= oled_wdata;
                         i2c_enable <= 1;
                     end
                 end
@@ -102,11 +113,11 @@ module top_controller (
                 end
 
                 S_DELAY: begin
-                    if (delay_cnt == 16'hFFFF) begin
+                    if (delay_cnt == INTER_TX_DELAY) begin
                         state <= S_WRITE_EEPROM_ADDR;
                         i2c_addr <= 7'h50; // EEPROM address
                         i2c_rw <= 0;
-                        i2c_data_in <= 8'h00; // Memory address 0x00
+                        i2c_data_in <= eeprom_ptr; // Memory pointer byte
                         i2c_enable <= 1;
                     end else begin
                         delay_cnt <= delay_cnt + 1;
@@ -150,7 +161,14 @@ module top_controller (
                 end
 
                 S_DONE: begin
-                    // Stay here
+                    // Allow re-running the demo from the testbench
+                    if (start_demo && !i2c_busy) begin
+                        state <= S_WRITE_OLED;
+                        i2c_addr <= 7'h3C;
+                        i2c_rw <= 0;
+                        i2c_data_in <= oled_wdata;
+                        i2c_enable <= 1;
+                    end
                 end
 
                 S_ERROR: begin

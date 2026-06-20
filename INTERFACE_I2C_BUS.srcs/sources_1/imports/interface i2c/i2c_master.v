@@ -45,6 +45,7 @@ module i2c_master #(
     reg [2:0] bit_count;
 
     reg sda_out, sda_dir, scl_out;
+    reg start_pending;  // latch enable until I2C divider tick
     
     // Tri-state buffer for SDA
     assign sda = (sda_dir == 1'b1) ? sda_out : 1'bz;
@@ -81,7 +82,12 @@ module i2c_master #(
             sda_out <= 1;
             sda_dir <= 1;
             scl_out <= 1;
+            start_pending <= 0;
         end else begin
+            // Capture enable on any cycle; consumed when transaction starts
+            if (state == IDLE && enable)
+                start_pending <= 1'b1;
+
             if (i2c_clk_en) begin
                 case (state)
                     IDLE: begin
@@ -89,11 +95,12 @@ module i2c_master #(
                         sda_dir <= 1;
                         scl_out <= 1;
                         busy <= 0;
-                        if (enable) begin
+                        if (start_pending) begin
                             state <= START;
                             tx_data <= {addr, rw};
                             busy <= 1;
                             ack_error <= 0;
+                            start_pending <= 0;
                         end
                     end
 

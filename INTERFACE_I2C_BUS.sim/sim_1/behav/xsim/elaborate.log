@@ -9,10 +9,9 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.i2c_master_default
-Compiling module xil_defaultlib.top_controller
-Compiling module xil_defaultlib.i2c_slave(READ_DATA=8'b0)
-Compiling module xil_defaultlib.i2c_slave(READ_DATA=8'b01000010)
+Compiling module xil_defaultlib.i2c_master(I2C_FREQ=5000000)
+Compiling module xil_defaultlib.top_controller(I2C_CLK_FREQ=5000...
+Compiling module xil_defaultlib.i2c_slave
 Compiling module xil_defaultlib.tb_i2c_system
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_i2c_system_behav

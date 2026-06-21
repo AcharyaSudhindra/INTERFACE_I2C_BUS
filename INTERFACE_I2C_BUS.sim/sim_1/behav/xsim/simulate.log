@@ -6,4 +6,3 @@ Time resolution is 1 ps
 ==================================================
 [411000 ns] start_demo HIGH
 [511000 ns] start_demo LOW  — I2C bus should start toggling now
-The simulator has terminated in an unexpected manner with exit code 1073807364.  Please review the simulation log (xsim.log) for details.

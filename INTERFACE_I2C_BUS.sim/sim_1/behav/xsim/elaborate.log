@@ -8,10 +8,5 @@ Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.i2c_master(I2C_FREQ=5000000)
-Compiling module xil_defaultlib.top_controller(I2C_CLK_FREQ=5000...
-Compiling module xil_defaultlib.i2c_slave
-Compiling module xil_defaultlib.tb_i2c_system
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_i2c_system_behav
+ERROR: [XSIM 43-3356]  Could not open file xsim.dir/tb_i2c_system_behav/xsim.type for writing.
+ERROR: [XSIM 43-3915] Encountered a fatal error. Cannot continue. Exiting... 

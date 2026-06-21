@@ -95,7 +95,7 @@ module i2c_master #(
                         sda_dir <= 1;
                         scl_out <= 1;
                         busy <= 0;
-                        if (start_pending) begin
+                        if (start_pending && i2c_phase == 2'b11) begin
                             state <= START;
                             tx_data <= {addr, rw};
                             busy <= 1;
@@ -170,12 +170,11 @@ module i2c_master #(
                         case (i2c_phase)
                             2'b00: begin sda_dir <= 0; scl_out <= 0; end // Release SDA to read
                             2'b01: scl_out <= 1;
-                            2'b10: begin scl_out <= 1; rx_data[bit_count] <= sda; end // Sample Data
+                            2'b10: begin scl_out <= 1; rx_data[bit_count] <= sda; if (bit_count == 0) data_out <= {rx_data[7:1], sda}; end // Sample Data
                             2'b11: scl_out <= 0;
                         endcase
                         if (i2c_phase == 2'b11) begin
                             if (bit_count == 0) begin
-                                data_out <= rx_data;
                                 state <= ACK2;
                             end else begin
                                 bit_count <= bit_count - 1;
@@ -225,3 +224,4 @@ module i2c_master #(
     end
 
 endmodule
+

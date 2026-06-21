@@ -1,0 +1,58 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Jun 20 23:24:58 2026
+# Process ID         : 3560
+# Current directory  : C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim
+# Command line       : xsim.exe -log simulate_codex4.log -mode tcl -source {xsim.dir/tb_i2c_system_behav_codex4/xsim_script.tcl}
+# Log file           : C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim/simulate_codex4.log
+# Journal file       : C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim\xsim.jou
+# Running On         : omen
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) Ultra 7 255H
+# CPU Frequency      : 3686 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 16
+# Host memory        : 25123 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 34250 MB
+# Available Virtual  : 5119 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_i2c_system_behav_codex4/xsim_script.tcl
+# xsim {tb_i2c_system_behav_codex4} -autoloadwcfg -tclbatch {run_all.tcl}
+Time resolution is 1 ps
+source run_all.tcl
+## run -all
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+[1830000 ns] SLAVE 0x3c: received addr byte=0x78 addr=0x3c rw=0
+[1830000 ns] SLAVE 0x3c: ADDRESS MATCH - sending ACK
+[1830000 ns] SLAVE 0x50: received addr byte=0x78 addr=0x3c rw=0
+[1830000 ns] SLAVE 0x50: no match - NACK
+[2030000 ns] MASTER ACK1 sample sda=0 state=3
+[3270000 ns] SLAVE 0x3c: received data byte=0xa5 - sending ACK
+[3470000 ns] MASTER ACK2 sample sda=0 state=6
+[6150000 ns] SLAVE 0x3c: received addr byte=0xa0 addr=0x50 rw=0
+[6150000 ns] SLAVE 0x3c: no match - NACK
+[6150000 ns] SLAVE 0x50: received addr byte=0xa0 addr=0x50 rw=0
+[6150000 ns] SLAVE 0x50: ADDRESS MATCH - sending ACK
+[6350000 ns] MASTER ACK1 sample sda=0 state=3
+[7590000 ns] SLAVE 0x50: received data byte=0x00 - sending ACK
+[7790000 ns] MASTER ACK2 sample sda=0 state=6
+[9510000 ns] SLAVE 0x3c: received addr byte=0xa1 addr=0x50 rw=1
+[9510000 ns] SLAVE 0x3c: no match - NACK
+[9510000 ns] SLAVE 0x50: received addr byte=0xa1 addr=0x50 rw=1
+[9510000 ns] SLAVE 0x50: ADDRESS MATCH - sending ACK
+[9710000 ns] MASTER ACK1 sample sda=0 state=3
+RESULT: FAILED  eeprom_data=0x0X
+$finish called at time : 61370 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 115
+## quit
+INFO: [Common 17-206] Exiting xsim at Sat Jun 20 23:25:01 2026...

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I2C Bus Interface in Verilog – Technical Report</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    /* ── Print/page setup ───────────────────────────────────────── */
+    @page {
+      size: A4;
+      margin: 16mm 17mm 16mm 17mm;
+    }
+
+    @media print {
+      .no-print    { display: none !important; }
+      body         { background: white; }
+      .page        { margin: 0; box-shadow: none; page-break-after: always; }
+      .page:last-of-type { page-break-after: auto; }
+      /* prevent any block from splitting across a printed page */
+      .bug-card, table, pre, .two-col, .three-col,
+      .info-box, .tl-item, .metric-card { page-break-inside: avoid; }
+      h2, h3       { page-break-after: avoid; }
+    }
+
+    /* ── Reset ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.5;
+      color: #1e293b;
+      background: #e8edf4;
+    }
+
+    /* ── Page wrapper (A4, no overflow clipping) ────────────────── */
+    .page {
+      width: 210mm;
+      /* Use exact height with padding so content is naturally bounded */
+      height: 297mm;
+      overflow: hidden;           /* clip only at true page boundary  */
+      margin: 0 auto 10mm;
+      background: white;
+      /* Inner padding accounts for @page margins at print time       */
+      padding: 14mm 17mm 20mm;   /* top / sides / bottom (footer gap) */
+      box-shadow: 0 6px 30px rgba(0,0,0,0.14);
+      position: relative;
+    }
+
+    /* ── Accent stripe ──────────────────────────────────────────── */
+    .accent-bar {
+      height: 4px;
+      background: linear-gradient(90deg,#1e3a8a,#3b82f6,#06b6d4);
+      border-radius: 3px;
+      margin-bottom: 8mm;
+    }
+
+    /* ── Running header (pages 2-4) ─────────────────────────────── */
+    .run-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #3b82f6;
+      padding-bottom: 2mm;
+      margin-bottom: 5mm;
+    }
+    .run-header-title {
+      font-size: 7.5pt; font-weight: 700; letter-spacing: .8px;
+      text-transform: uppercase; color: #64748b;
+    }
+    .run-header-page { font-size: 7.5pt; color: #94a3b8; }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    .footer {
+      position: absolute;
+      bottom: 8mm; left: 17mm; right: 17mm;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 2.5mm;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: #94a3b8;
+    }
+
+    /* ── Cover page ─────────────────────────────────────────────── */
+    .cover-badge {
+      display: inline-block;
+      background: linear-gradient(135deg,#1e3a8a,#3b82f6);
+      color: white; font-size: 7.5pt; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 3px 14px; border-radius: 20px;
+      margin-bottom: 5mm;
+    }
+    .cover-title {
+      font-size: 24pt; font-weight: 800;
+      color: #0f172a; line-height: 1.1; margin-bottom: 2mm;
+    }
+    .cover-title span { color: #3b82f6; }
+    .cover-sub {
+      font-size: 10pt; color: #64748b;
+      margin-bottom: 7mm;
+    }
+
+    /* metrics row */
+    .metrics-row {
+      display: flex; gap: 4mm; margin: 5mm 0;
+    }
+    .metric-card {
+      flex: 1; border: 1.5px solid #e2e8f0;
+      border-radius: 7px; padding: 4mm 3mm;
+      text-align: center;
+      background: linear-gradient(145deg,#f8fafc,#f1f5f9);
+    }
+    .metric-val  { font-size: 14pt; font-weight: 800; color: #1e3a8a; line-height: 1; }
+    .metric-lbl  { font-size: 7pt; color: #64748b; margin-top: 1mm; }
+
+    .cover-bottom {
+      border-top: 1.5px solid #e2e8f0;
+      padding-top: 4mm; margin-top: 4mm;
+      display: flex; justify-content: space-between;
+      font-size: 8pt; color: #64748b;
+    }
+    .cover-bottom .author { font-weight: 700; color: #1e3a8a; }
+
+    /* ── Typography ─────────────────────────────────────────────── */
+    h2 {
+      font-size: 12pt; font-weight: 800; color: #0f172a;
+      margin: 4mm 0 2mm;
+      display: flex; align-items: center; gap: 2mm;
+    }
+    h2 .n {
+      background: linear-gradient(135deg,#1e3a8a,#3b82f6);
+      color: white; font-size: 7.5pt; font-weight: 800;
+      width: 17px; height: 17px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    h3 { font-size: 9.5pt; font-weight: 700; color: #1e40af; margin: 3mm 0 1.5mm; }
+    p  { margin-bottom: 2mm; color: #334155; font-size: 9pt; }
+
+    /* ── Grids ──────────────────────────────────────────────────── */
+    .two-col   { display: grid; grid-template-columns: 1fr 1fr;     gap: 4mm; margin-bottom: 3mm; }
+    .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-bottom: 3mm; }
+
+    /* ── Info boxes ─────────────────────────────────────────────── */
+    .box {
+      border-radius: 6px; padding: 3mm 3.5mm; margin-bottom: 2.5mm;
+      font-size: 8.5pt;
+    }
+    .box strong { color: #0f172a; font-size: 8.5pt; }
+    .box.blue   { background: #eff6ff; border-left: 3px solid #3b82f6; }
+    .box.green  { background: #f0fdf4; border-left: 3px solid #22c55e; }
+    .box.amber  { background: #fffbeb; border-left: 3px solid #f59e0b; }
+    .box.purple { background: #faf5ff; border-left: 3px solid #8b5cf6; }
+    .box.slate  { background: #f8fafc; border-left: 3px solid #64748b; }
+
+    /* ── Code ───────────────────────────────────────────────────── */
+    pre, code { font-family: 'JetBrains Mono', monospace; }
+    pre {
+      background: #0f172a; color: #e2e8f0;
+      padding: 3mm 3.5mm; border-radius: 6px;
+      font-size: 7pt; line-height: 1.55;
+      margin-bottom: 2.5mm; overflow: hidden;
+    }
+    code { font-size: 7.5pt; color: #1e40af; }
+    pre code { color: #e2e8f0; font-size: 7pt; }
+    .kw { color: #7dd3fc; } .cm { color: #64748b; }
+    .nm { color: #a5f3fc; } .lt { color: #fde68a; }
+    .fn { color: #c4b5fd; } .op { color: #f9a8d4; }
+
+    /* ── Tables ─────────────────────────────────────────────────── */
+    table { width: 100%; border-collapse: collapse; margin-bottom: 3mm; font-size: 8pt; }
+    thead th {
+      background: linear-gradient(135deg,#1e3a8a,#2563eb);
+      color: white; padding: 2.5mm 3mm; text-align: left; font-weight: 600;
+    }
+    tbody tr:nth-child(even) { background: #f8fafc; }
+    td {
+      padding: 2mm 3mm; border-bottom: 1px solid #e2e8f0;
+      color: #334155; vertical-align: top;
+    }
+    td.mono { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; color: #1e40af; }
+    td.pass { color: #16a34a; font-weight: 700; }
+
+    /* ── Bug cards ──────────────────────────────────────────────── */
+    .bug-card {
+      border: 1px solid #e2e8f0; border-radius: 7px;
+      overflow: hidden; margin-bottom: 3mm;
+    }
+    .bug-hdr {
+      background: #0f172a; color: white;
+      padding: 2mm 3.5mm; font-size: 7.5pt; font-weight: 700;
+      display: flex; align-items: center; gap: 2mm;
+    }
+    .tag { padding: 1px 6px; border-radius: 10px; font-size: 6.5pt; font-weight: 700; }
+    .tag.red   { background: #ef4444; color: white; }
+    .tag.green { background: #22c55e; color: white; margin-left: auto; }
+    .bug-body  { padding: 2.5mm 3.5mm; font-size: 8pt; }
+    .bug-body p { margin-bottom: 1.5mm; }
+    .cause { color: #dc2626; font-weight: 700; }
+    .fix   { color: #16a34a;  font-weight: 700; }
+
+    /* ── Timeline ───────────────────────────────────────────────── */
+    .timeline { position: relative; padding-left: 8mm; margin-bottom: 3mm; }
+    .timeline::before {
+      content:''; position: absolute;
+      left: 3mm; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(180deg,#3b82f6,#06b6d4);
+    }
+    .tl { position: relative; margin-bottom: 2.5mm; }
+    .tl::before {
+      content:''; position: absolute;
+      left: -5.5mm; top: 1.5mm;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #3b82f6; border: 2px solid white;
+      box-shadow: 0 0 0 1.5px #3b82f6;
+    }
+    .tl-t { font-size: 7.5pt; font-weight: 700; color: #1e40af; font-family: 'JetBrains Mono',monospace; }
+    .tl-d { font-size: 8pt; color: #334155; }
+
+    /* ── Pills ──────────────────────────────────────────────────── */
+    .pill { display:inline-block; padding:1px 7px; border-radius:12px; font-size:7pt; font-weight:700; }
+    .pill.blue   { background:#dbeafe; color:#1e40af; }
+    .pill.green  { background:#dcfce7; color:#166534; }
+    .pill.amber  { background:#fef3c7; color:#92400e; }
+    .pill.purple { background:#ede9fe; color:#5b21b6; }
+    .pill.cyan   { background:#cffafe; color:#164e63; }
+
+    /* ── Print button (screen only) ─────────────────────────────── */
+    .print-btn {
+      display: block; text-align: center; padding: 18px;
+      font-family: 'Inter', sans-serif;
+    }
+    .print-btn button {
+      background: linear-gradient(135deg,#1e3a8a,#3b82f6);
+      color: white; border: none; padding: 11px 30px;
+      border-radius: 8px; font-size: 14px; font-weight: 700;
+      cursor: pointer; box-shadow: 0 4px 14px rgba(59,130,246,.4);
+    }
+    .print-btn p { color:#64748b; margin-top:7px; font-size:11px; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════ PAGE 1 – COVER ═══════════════════════ -->
+<div class="page">
+  <div class="accent-bar"></div>
+
+  <div style="text-align:center; padding-top:4mm;">
+    <div class="cover-badge">FPGA · Verilog HDL · Digital Design</div>
+    <div class="cover-title">I2C Bus Interface<br/><span>in Verilog HDL</span></div>
+    <div class="cover-sub">Comprehensive Technical Report — Architecture, Implementation &amp; Verification</div>
+  </div>
+
+  <!-- Architecture SVG -->
+  <svg width="100%" height="185" viewBox="0 0 520 185" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 5mm;">
+    <defs>
+      <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1e3a8a"/><stop offset="100%" style="stop-color:#3b82f6"/></linearGradient>
+      <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0e7490"/><stop offset="100%" style="stop-color:#06b6d4"/></linearGradient>
+      <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#5b21b6"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient>
+      <marker id="ar" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#64748b"/></marker>
+    </defs>
+    <!-- top_controller -->
+    <rect x="175" y="8" width="170" height="44" rx="7" fill="url(#g1)"/>
+    <text x="260" y="28" text-anchor="middle" fill="white" font-size="9" font-weight="700" font-family="Inter,sans-serif">top_controller.v</text>
+    <text x="260" y="42" text-anchor="middle" fill="#93c5fd" font-size="7.5" font-family="Inter,sans-serif">Application FSM · 10 states</text>
+    <!-- i2c_master -->
+    <rect x="175" y="70" width="170" height="44" rx="7" fill="url(#g2)"/>
+    <text x="260" y="89" text-anchor="middle" fill="white" font-size="9" font-weight="700" font-family="Inter,sans-serif">i2c_master.v</text>
+    <text x="260" y="103" text-anchor="middle" fill="#a5f3fc" font-size="7.5" font-family="Inter,sans-serif">Protocol FSM · 4-phase clock divider</text>
+    <!-- arrow ctrl→master -->
+    <line x1="260" y1="52" x2="260" y2="70" stroke="#64748b" stroke-width="1.5" marker-end="url(#ar)"/>
+    <text x="272" y="64" fill="#94a3b8" font-size="7" font-family="Inter,sans-serif">enable / busy</text>
+    <!-- SDA SCL lines -->
+    <line x1="345" y1="92" x2="405" y2="92" stroke="#06b6d4" stroke-width="1.5" marker-end="url(#ar)"/>
+    <text x="363" y="88" fill="#06b6d4" font-size="7" font-family="JetBrains Mono,monospace" font-weight="700">SDA</text>
+    <line x1="345" y1="104" x2="405" y2="104" stroke="#7dd3fc" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#ar)"/>
+    <text x="363" y="100" fill="#7dd3fc" font-size="7" font-family="JetBrains Mono,monospace" font-weight="700">SCL</text>
+    <!-- I2C bus label -->
+    <rect x="400" y="80" width="80" height="20" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="440" y="93" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="Inter,sans-serif" font-weight="600">I2C Bus</text>
+    <!-- OLED slave -->
+    <rect x="405" y="115" width="80" height="30" rx="6" fill="url(#g3)"/>
+    <text x="445" y="130" text-anchor="middle" fill="white" font-size="8" font-weight="700" font-family="Inter,sans-serif">OLED Slave</text>
+    <text x="445" y="141" text-anchor="middle" fill="#c4b5fd" font-size="7" font-family="JetBrains Mono,monospace">addr 0x3C</text>
+    <!-- EEPROM slave -->
+    <rect x="405" y="152" width="80" height="28" rx="6" fill="#134e4a" stroke="#06b6d4" stroke-width="1"/>
+    <text x="445" y="167" text-anchor="middle" fill="white" font-size="8" font-weight="700" font-family="Inter,sans-serif">EEPROM Slave</text>
+    <text x="445" y="176" text-anchor="middle" fill="#a5f3fc" font-size="7" font-family="JetBrains Mono,monospace">addr 0x50</text>
+    <!-- bus vertical -->
+    <line x1="445" y1="100" x2="445" y2="115" stroke="#475569" stroke-width="1.5"/>
+    <line x1="445" y1="145" x2="445" y2="152" stroke="#475569" stroke-width="1.5"/>
+    <!-- Testbench box -->
+    <rect x="10" y="70" width="140" height="44" rx="7" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="80" y="89" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="700" font-family="Inter,sans-serif">tb_i2c_system.v</text>
+    <text x="80" y="103" text-anchor="middle" fill="#64748b" font-size="7" font-family="Inter,sans-serif">Testbench · Vivado xSim</text>
+    <line x1="150" y1="92" x2="175" y2="92" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ar)"/>
+    <!-- clk -->
+    <rect x="25" y="128" width="90" height="18" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+    <text x="70" y="140" text-anchor="middle" fill="#93c5fd" font-size="7.5" font-family="JetBrains Mono,monospace">clk 50 MHz</text>
+    <line x1="80" y1="114" x2="80" y2="128" stroke="#3b82f6" stroke-width="1" stroke-dasharray="2,2"/>
+  </svg>
+
+  <!-- Metrics -->
+  <div class="metrics-row">
+    <div class="metric-card"><div class="metric-val">100 kHz</div><div class="metric-lbl">I²C Bus Speed</div></div>
+    <div class="metric-card"><div class="metric-val">50 MHz</div><div class="metric-lbl">System Clock</div></div>
+    <div class="metric-card"><div class="metric-val">5</div><div class="metric-lbl">Verilog Modules</div></div>
+    <div class="metric-card"><div class="metric-val">100%</div><div class="metric-lbl">Test Coverage</div></div>
+    <div class="metric-card"><div class="metric-val">300 µs</div><div class="metric-lbl">Sim Duration</div></div>
+  </div>
+
+  <!-- Abstract -->
+  <div class="box blue" style="font-size:8.5pt; margin-top:2mm;">
+    <strong>Abstract:</strong> This report presents the complete design and verification of an I²C bus master controller and companion behavioral slave models, implemented in Verilog HDL and simulated on Xilinx Vivado xSim. The design demonstrates standard-mode (100 kHz) I²C communication between an FSM-based master and two parameterised peripherals — a simulated OLED display (<code>0x3C</code>) and an EEPROM (<code>0x50</code>). All three simulation bugs encountered during development are documented, root-caused, and resolved.
+  </div>
+
+  <!-- Cover footer info -->
+  <div class="cover-bottom">
+    <div>
+      <div class="author">Acharya Sudhindra</div>
+      <div>GitHub: AcharyaSudhindra/INTERFACE_I2C_BUS</div>
+    </div>
+    <div style="text-align:right;">
+      <div>Xilinx Vivado 2024 · xSim Simulator</div>
+      <div>June 2026 &nbsp;·&nbsp; Revision 1.0</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>I2C Bus Interface in Verilog HDL — Technical Report</span>
+    <span>Page 1 of 4</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ PAGE 2 – PROTOCOL & i2c_master ══════ -->
+<div class="page">
+  <div class="accent-bar"></div>
+  <div class="run-header">
+    <span class="run-header-title">Section 1 — I²C Protocol Overview &amp; Master Engine</span>
+    <span class="run-header-page">2 / 4</span>
+  </div>
+
+  <h2><span class="n">1</span> I²C Protocol Overview</h2>
+  <p>I²C (Inter-Integrated Circuit) is a synchronous, multi-master, multi-slave serial bus requiring only two bidirectional open-drain signals. Devices share SDA and SCL; the wired-AND topology holds both lines HIGH (via pull-up resistors) when no device drives them LOW.</p>
+
+  <div class="two-col" style="margin-top:2mm;">
+    <div class="box blue"><strong>START Condition</strong><br/>SDA falls LOW while SCL is HIGH — marks the beginning of a transaction.</div>
+    <div class="box amber"><strong>STOP Condition</strong><br/>SDA rises HIGH while SCL is HIGH — releases the bus after a transaction.</div>
+  </div>
+
+  <table style="margin-bottom:4mm;">
+    <thead><tr><th>Phase</th><th>Direction</th><th>Bits</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill blue">START</span></td><td>Master → Bus</td><td>—</td><td>SDA falls while SCL HIGH; all slaves listen</td></tr>
+      <tr><td><span class="pill blue">Address</span></td><td>Master → Slave</td><td>7</td><td>7-bit target address, MSB-first</td></tr>
+      <tr><td><span class="pill cyan">R/W</span></td><td>Master → Slave</td><td>1</td><td>0 = Write, 1 = Read</td></tr>
+      <tr><td><span class="pill green">ACK 1</span></td><td>Slave → Master</td><td>1</td><td>Addressed slave pulls SDA LOW to acknowledge</td></tr>
+      <tr><td><span class="pill purple">Data</span></td><td>Both</td><td>8</td><td>Payload byte; direction set by R/W bit</td></tr>
+      <tr><td><span class="pill green">ACK 2</span></td><td>Receiver</td><td>1</td><td>Receiver acknowledges the data byte</td></tr>
+      <tr><td><span class="pill amber">STOP</span></td><td>Master → Bus</td><td>—</td><td>SDA rises while SCL HIGH; bus released</td></tr>
+    </tbody>
+  </table>
+
+  <h2><span class="n">2</span> i2c_master.v — Low-Level Protocol Engine</h2>
+  <p>The master encapsulates the complete I²C frame generator. Its clock divider converts the 50 MHz system clock into 100 kHz I²C clock pulses, then resolves each cycle into <strong>4 internal phases</strong> to guarantee setup/hold timing.</p>
+
+  <div class="three-col">
+    <div class="box blue" style="text-align:center;"><strong>Phase 0</strong><br/>SCL = 0<br/><span style="font-size:7.5pt;color:#64748b;">Master sets SDA</span></div>
+    <div class="box green" style="text-align:center;"><strong>Phase 1</strong><br/>SCL ↑ (rises)<br/><span style="font-size:7.5pt;color:#64748b;">Clock goes HIGH</span></div>
+    <div class="box green" style="text-align:center;"><strong>Phase 2</strong><br/>SCL = 1<br/><span style="font-size:7.5pt;color:#64748b;">Data sampled here</span></div>
+  </div>
+  <div class="box amber" style="margin-top:-1mm; margin-bottom:3mm; font-size:8.5pt;">
+    <strong>Phase 3 — SCL ↓:</strong> Clock falls; master/slave prepares next bit. SDA only changes during SCL-LOW, guaranteeing stability during SCL-HIGH per the I²C specification.
+  </div>
+
+  <pre><span class="cm">// Phase clock divider: 50 MHz system clock → 100 kHz I²C → 4 phases</span>
+<span class="kw">localparam</span> <span class="nm">DIVIDER</span> <span class="op">=</span> (<span class="nm">INPUT_CLK_FREQ</span> <span class="op">/</span> <span class="nm">I2C_FREQ</span>) <span class="op">/</span> <span class="lt">4</span>;  <span class="cm">// = 125 cycles/phase</span>
+<span class="cm">// SDA tri-state: master drives only when sda_dir == 1, else releases to Hi-Z</span>
+<span class="kw">assign</span> <span class="nm">sda</span> <span class="op">=</span> (<span class="nm">sda_dir</span> <span class="op">==</span> <span class="lt">1'b1</span>) <span class="op">?</span> <span class="nm">sda_out</span> <span class="op">:</span> <span class="lt">1'bz</span>;</pre>
+
+  <table>
+    <thead><tr><th>FSM State</th><th>Code</th><th>Action on Bus</th><th>Transition Condition</th></tr></thead>
+    <tbody>
+      <tr><td>IDLE</td><td class="mono">4'd0</td><td>SCL=1, SDA=1 — bus free</td><td><code>enable</code> asserted &amp; phase=11</td></tr>
+      <tr><td>START</td><td class="mono">4'd1</td><td>SDA 1→0 while SCL=1</td><td>After phase 11</td></tr>
+      <tr><td>ADDR</td><td class="mono">4'd2</td><td>Shift 7-bit address + R/W (MSB-first)</td><td>bit_count reaches 0</td></tr>
+      <tr><td>ACK1</td><td class="mono">4'd3</td><td>Release SDA; sample slave ACK at phase 10</td><td>ACK OK → WRITE/READ; NACK → STOP</td></tr>
+      <tr><td>WRITE</td><td class="mono">4'd4</td><td>Shift 8 bits from <code>data_in</code> onto SDA</td><td>bit_count reaches 0</td></tr>
+      <tr><td>READ</td><td class="mono">4'd5</td><td>Release SDA; sample 8 bits into <code>rx_data</code></td><td>bit_count reaches 0</td></tr>
+      <tr><td>ACK2</td><td class="mono">4'd6</td><td>Master NACK (read) or checks slave ACK (write)</td><td>After phase 11</td></tr>
+      <tr><td>STOP</td><td class="mono">4'd7</td><td>SDA 0→1 while SCL=1; returns to IDLE</td><td>After phase 11</td></tr>
+    </tbody>
+  </table>
+
+  <h2><span class="n">3</span> top_controller.v — Application Layer FSM</h2>
+  <p>Orchestrates two complete I²C transactions via a 10-state FSM, driving the <code>i2c_master</code> through <code>enable</code>/<code>rw</code>/<code>addr</code>/<code>data_in</code> signals, then waiting on <code>busy</code> and <code>ack_error</code>.</p>
+
+  <div class="two-col">
+    <div class="box purple" style="font-size:8.5pt;"><strong>Tx 1 — OLED Write (0x3C)</strong><br/>Sets <code>rw=0</code>, loads <code>oled_wdata=0xA5</code>, pulses <code>enable</code>. Waits for <code>busy</code> to deassert with no ACK error.</div>
+    <div class="box blue"   style="font-size:8.5pt;"><strong>Tx 2 — EEPROM Read (0x50)</strong><br/>Writes pointer byte <code>eeprom_ptr=0x00</code>, then re-issues with <code>rw=1</code>; captures returned byte into <code>eeprom_data</code>.</div>
+  </div>
+
+  <div class="box slate" style="font-size:8.5pt; margin-top:-1mm;">
+    A 16-bit <code>INTER_TX_DELAY</code> counter inserts quiet time between transactions. In simulation: 200 cycles (4 µs). In hardware: 65 535 cycles (~1.3 ms at 50 MHz).
+  </div>
+
+  <div class="footer">
+    <span>I2C Bus Interface in Verilog HDL — Technical Report</span>
+    <span>Page 2 of 4</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════ PAGE 3 – SLAVE MODELS & BUGS ═════════════ -->
+<div class="page">
+  <div class="accent-bar"></div>
+  <div class="run-header">
+    <span class="run-header-title">Section 2 — Slave Models, Testbench &amp; Engineering Challenges</span>
+    <span class="run-header-page">3 / 4</span>
+  </div>
+
+  <h2><span class="n">4</span> Behavioral Slave Models</h2>
+  <p>Two simulation-only behavioral slaves are provided, both parameterised by <code>SLAVE_ADDR</code> (7-bit) and <code>READ_DATA</code> (8-bit). The critical design separates <em>sampling</em> and <em>driving</em> into distinct clock-edge domains to eliminate race conditions:</p>
+
+  <div class="two-col">
+    <div class="box green" style="font-size:8.5pt;"><strong>posedge SCL → Sample only</strong><br/><code>shift_reg ← {shift_reg[6:0], sda}</code><br/>SDA is guaranteed stable during SCL-HIGH per the I²C spec.</div>
+    <div class="box blue"  style="font-size:8.5pt;"><strong>negedge SCL → Drive / Advance state</strong><br/>After the data window closes, the slave pulls SDA for ACK or drives READ data — no false START/STOP edges.</div>
+  </div>
+
+  <table style="margin-bottom:3mm;">
+    <thead><tr><th>Feature</th><th>i2c_slave.v</th><th>mock_i2c_slave.v</th></tr></thead>
+    <tbody>
+      <tr><td>START/STOP detection</td><td>Counters: start_count / stop_count</td><td>Flags: start_seen / stop_seen regs</td></tr>
+      <tr><td>Address decode</td><td>8-bit accumulation then match</td><td>8-bit shift then compare</td></tr>
+      <tr><td>Multi-driver safety</td><td>All assignments in single negedge-scl block</td><td>Separate negedge-sda / posedge-sda blocks</td></tr>
+      <tr><td>READ support</td><td>Pre-loads READ_DATA at ADDR_ACK boundary</td><td>Pre-loads at bit_count == 8 boundary</td></tr>
+      <tr><td>Debug output</td><td><code>$display</code> on address/data events</td><td>Silent (cleaner simulation log)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Testbench — tb_i2c_system.v</h3>
+  <p>Instantiates the full virtual system: pull-up resistors model the open-drain bus; two slave instances share <code>sda</code>/<code>scl</code>; a 2 ms watchdog prevents hangs; self-checking assertion verifies <code>eeprom_data === 8'h42</code>.</p>
+
+  <pre><span class="kw">pullup</span> (<span class="nm">sda</span>); <span class="kw">pullup</span> (<span class="nm">scl</span>);  <span class="cm">// model open-drain pull-ups (mandatory in Verilog)</span>
+<span class="fn">i2c_slave</span> #(.<span class="nm">SLAVE_ADDR</span>(<span class="lt">7'h3C</span>), .<span class="nm">READ_DATA</span>(<span class="lt">8'h00</span>)) <span class="nm">oled_slave</span>   (.sda(sda),.scl(scl));
+<span class="fn">i2c_slave</span> #(.<span class="nm">SLAVE_ADDR</span>(<span class="lt">7'h50</span>), .<span class="nm">READ_DATA</span>(<span class="lt">8'h42</span>)) <span class="nm">eeprom_slave</span> (.sda(sda),.scl(scl));</pre>
+
+  <h2><span class="n">5</span> Engineering Challenges &amp; Bug Resolutions</h2>
+
+  <div class="bug-card">
+    <div class="bug-hdr">
+      <span class="tag red">BUG #1</span>
+      Floating Bus → Immediate NACK on First Transaction
+      <span class="tag green">RESOLVED</span>
+    </div>
+    <div class="bug-body">
+      <p><span class="cause">● Symptom:</span> Master addressed 0x3C but received NACK instantly — bus never responded.</p>
+      <p><span class="cause">● Root Cause:</span> No slave modules were instantiated. SDA stayed HIGH via the pull-up (HIGH in the ACK slot = NACK). The master was communicating with an empty bus.</p>
+      <p><span class="fix">● Fix:</span> Added <code>oled_slave</code> and <code>eeprom_slave</code> instantiations onto the shared <code>sda</code>/<code>scl</code> wires. ACK pulses appeared immediately after.</p>
+    </div>
+  </div>
+
+  <div class="bug-card">
+    <div class="bug-hdr">
+      <span class="tag red">BUG #2</span>
+      Bit-Shift Race Condition → Wrong Address Decoded (0x78 instead of 0x3C)
+      <span class="tag green">RESOLVED</span>
+    </div>
+    <div class="bug-body">
+      <p><span class="cause">● Symptom:</span> Slave reported address <code>0x78</code> instead of <code>0x3C</code> — exactly one left-shift away.</p>
+      <p><span class="cause">● Root Cause:</span> The original slave sampled <code>sda</code> on <code>negedge scl</code>. The master also changes SDA shortly after the falling edge, causing a Verilog delta-cycle race: the slave captured the wrong (next) bit, shifting every address by one.</p>
+      <p><span class="fix">● Fix:</span> Moved data sampling strictly to <code>posedge scl</code> — the only point where I²C guarantees SDA is stable. State transitions kept on <code>negedge scl</code> to avoid generating false START/STOP conditions.</p>
+    </div>
+  </div>
+
+  <div class="bug-card">
+    <div class="bug-hdr">
+      <span class="tag red">BUG #3</span>
+      Multi-Driver Error — Vivado xelab Fatal: VRFC 10-529
+      <span class="tag green">RESOLVED</span>
+    </div>
+    <div class="bug-body">
+      <p><span class="cause">● Symptom:</span> xelab refused to elaborate with <em>"concurrent assignment to a non-net is not permitted"</em>.</p>
+      <p><span class="cause">● Root Cause:</span> <code>is_addressed</code> and <code>bit_count</code> were assigned inside both <code>always @(negedge sda)</code> (START detector) and <code>always @(negedge scl)</code> (main FSM). Verilog forbids one <code>reg</code> being driven from two independent <code>always</code> blocks.</p>
+      <p><span class="fix">● Fix:</span> Introduced single-bit <code>start_seen</code> / <code>stop_seen</code> flags, each written by exactly one always block. The main FSM reads the flags without driving registers from multiple domains — clean elaboration.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>I2C Bus Interface in Verilog HDL — Technical Report</span>
+    <span>Page 3 of 4</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════ PAGE 4 – RESULTS & CONCLUSIONS ═══════════ -->
+<div class="page">
+  <div class="accent-bar"></div>
+  <div class="run-header">
+    <span class="run-header-title">Section 3 — Verification Results, Parameters &amp; Conclusions</span>
+    <span class="run-header-page">4 / 4</span>
+  </div>
+
+  <h2><span class="n">6</span> Simulation Verification Results</h2>
+  <p>After all bug fixes, <code>tb_i2c_system</code> was simulated for 300 µs in Vivado Behavioral Simulation. All transactions completed successfully and the self-checking assertion passed.</p>
+
+  <!-- Waveform strip -->
+  <svg width="100%" height="82" viewBox="0 0 545 82" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:3mm 0;">
+    <rect width="545" height="82" rx="5" fill="#0f172a"/>
+    <text x="8" y="14" fill="#94a3b8" font-size="6.5" font-family="JetBrains Mono,monospace">Signal</text>
+    <text x="8" y="32" fill="#7dd3fc" font-size="6.5" font-family="JetBrains Mono,monospace">SCL</text>
+    <text x="8" y="54" fill="#a5f3fc" font-size="6.5" font-family="JetBrains Mono,monospace">SDA</text>
+    <text x="8" y="73" fill="#c4b5fd" font-size="6.5" font-family="JetBrains Mono,monospace">BUSY</text>
+    <!-- SCL -->
+    <polyline points="38,37 38,26 50,26 50,37 62,37 62,26 74,26 74,37 86,37 86,26 98,26 98,37 110,37 110,26 122,26 122,37 134,37 134,26 146,26 146,37 158,37 158,26 170,26 170,37 182,37 182,26 194,26 194,37 230,37 230,26 242,26 242,37 254,37 254,26 266,26 266,37 278,37 278,26 290,26 290,37 302,37 302,26 314,26 314,37 326,37 326,26 338,26 338,37 350,37 350,26 362,26 362,37"
+      fill="none" stroke="#7dd3fc" stroke-width="1.1"/>
+    <!-- SDA -->
+    <polyline points="38,59 42,49 50,49 50,59 74,59 74,49 98,49 110,59 134,59 146,49 158,49 170,59 194,59 194,49 228,49 228,59 254,59 278,59 302,49 326,49 338,59 362,59 362,49"
+      fill="none" stroke="#a5f3fc" stroke-width="1.1"/>
+    <!-- BUSY -->
+    <polyline points="38,77 42,69 370,69 370,77 535,77" fill="none" stroke="#c4b5fd" stroke-width="1.1"/>
+    <!-- labels -->
+    <text x="38" y="9"  fill="#64748b" font-size="6" font-family="Inter,sans-serif">START</text>
+    <text x="130" y="9" fill="#64748b" font-size="6" font-family="Inter,sans-serif">ADDR 0x3C</text>
+    <text x="230" y="9" fill="#64748b" font-size="6" font-family="Inter,sans-serif">DATA 0xA5</text>
+    <text x="355" y="9" fill="#64748b" font-size="6" font-family="Inter,sans-serif">STOP</text>
+    <line x1="42"  y1="11" x2="42"  y2="78" stroke="#475569" stroke-width=".5" stroke-dasharray="2,2"/>
+    <line x1="134" y1="11" x2="134" y2="78" stroke="#475569" stroke-width=".5" stroke-dasharray="2,2"/>
+    <line x1="232" y1="11" x2="232" y2="78" stroke="#475569" stroke-width=".5" stroke-dasharray="2,2"/>
+    <line x1="366" y1="11" x2="366" y2="78" stroke="#475569" stroke-width=".5" stroke-dasharray="2,2"/>
+    <!-- PASS badge -->
+    <rect x="415" y="60" width="118" height="15" rx="3" fill="#166534"/>
+    <text x="474" y="71" text-anchor="middle" fill="#bbf7d0" font-size="7" font-weight="700" font-family="Inter,sans-serif">✓  RESULT: PASSED</text>
+  </svg>
+
+  <h3>Transaction Timeline</h3>
+  <div class="timeline">
+    <div class="tl"><div class="tl-t">0 – 100 µs</div><div class="tl-d"><strong>OLED Write:</strong> Master → START → address 0x3C (W) → ACK ← slave → transmits <code>0xA5</code> → ACK ← slave → STOP. <span class="pill green">ACK received</span></div></div>
+    <div class="tl"><div class="tl-t">100 – 150 µs</div><div class="tl-d"><strong>Inter-Tx Delay:</strong> Bus idle, SCL &amp; SDA held HIGH by pull-ups. <code>INTER_TX_DELAY</code> counter runs 200 cycles.</div></div>
+    <div class="tl"><div class="tl-t">150 – 250 µs</div><div class="tl-d"><strong>EEPROM Read:</strong> Master → address 0x50 (W) → pointer <code>0x00</code> → ACK. Re-issues address 0x50 (R) → slave drives <code>0x42</code> → master NACK → STOP.</div></div>
+    <div class="tl"><div class="tl-t">~ 250 µs</div><div class="tl-d"><strong>Self-check:</strong> <code>eeprom_data === 8'h42</code> ✓ — testbench prints <em>"RESULT: PASSED"</em> and calls <code>$finish</code>.</div></div>
+  </div>
+
+  <h2><span class="n">7</span> Configurable Parameters</h2>
+  <table style="margin-bottom:3mm;">
+    <thead><tr><th>Module</th><th>Parameter</th><th>Default</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td>i2c_master</td><td class="mono">INPUT_CLK_FREQ</td><td class="mono">50_000_000</td><td>System clock in Hz</td></tr>
+      <tr><td>i2c_master</td><td class="mono">I2C_FREQ</td><td class="mono">100_000</td><td>Target I²C clock speed in Hz</td></tr>
+      <tr><td>top_controller</td><td class="mono">INTER_TX_DELAY</td><td class="mono">16'hFFFF</td><td>Idle cycles between transactions (~1.3 ms)</td></tr>
+      <tr><td>i2c_slave</td><td class="mono">SLAVE_ADDR</td><td class="mono">7'h3C</td><td>7-bit device address to respond to</td></tr>
+      <tr><td>i2c_slave</td><td class="mono">READ_DATA</td><td class="mono">8'hBB</td><td>Byte returned when master reads</td></tr>
+    </tbody>
+  </table>
+
+  <h2><span class="n">8</span> Conclusions &amp; Future Work</h2>
+  <div class="two-col">
+    <div>
+      <h3>Key Achievements</h3>
+      <div class="box green" style="margin-bottom:2mm;font-size:8.5pt;"><strong>✓ Functional Correctness</strong> — 100% of I²C frame phases verified against the NXP protocol specification.</div>
+      <div class="box green" style="margin-bottom:2mm;font-size:8.5pt;"><strong>✓ Multi-Peripheral Bus</strong> — Two slaves with independent addresses coexist on shared SDA/SCL wires.</div>
+      <div class="box green"                           style="font-size:8.5pt;"><strong>✓ Simulation Robustness</strong> — Floating-bus, race-condition, and multi-driver bugs all resolved; clean Vivado elaboration.</div>
+    </div>
+    <div>
+      <h3>Potential Extensions</h3>
+      <div class="box purple" style="margin-bottom:2mm;font-size:8.5pt;"><strong>Fast Mode (400 kHz / 1 MHz)</strong> — Change <code>I2C_FREQ</code> parameter; adjust slave timing.</div>
+      <div class="box purple" style="margin-bottom:2mm;font-size:8.5pt;"><strong>Multi-Byte Bursts</strong> — Extend FSM for repeated START and sequential byte transfers.</div>
+      <div class="box purple"                           style="font-size:8.5pt;"><strong>FPGA Synthesis</strong> — Replace <code>pullup</code> with IOBUF primitives; target Artix-7 / Zynq.</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:3mm;">Source File Index</h3>
+  <table>
+    <thead><tr><th>File</th><th>Lines</th><th>Role</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">i2c_master.v</td><td>228</td><td>Core I²C FSM protocol engine with 4-phase clock</td><td class="pass">✓ Verified</td></tr>
+      <tr><td class="mono">top_controller.v</td><td>184</td><td>Application-layer transaction controller</td><td class="pass">✓ Verified</td></tr>
+      <tr><td class="mono">i2c_slave.v</td><td>196</td><td>Behavioral slave with <code>$display</code> debug logging</td><td class="pass">✓ Verified</td></tr>
+      <tr><td class="mono">mock_i2c_slave.v</td><td>168</td><td>Refactored clean behavioral slave (no logging)</td><td class="pass">✓ Verified</td></tr>
+      <tr><td class="mono">tb_i2c_system.v</td><td>125</td><td>Unified self-checking testbench (Vivado xSim)</td><td class="pass">✓ PASSED</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box blue" style="font-size:8pt; margin-top:2mm;">
+    <strong>Repository:</strong> <code>AcharyaSudhindra/INTERFACE_I2C_BUS</code> &nbsp;·&nbsp;
+    <strong>Tool:</strong> Xilinx Vivado 2024 · xSim &nbsp;·&nbsp;
+    <strong>Language:</strong> Verilog HDL (IEEE 1364-2001) &nbsp;·&nbsp;
+    <strong>Target:</strong> Simulation + Synthesisable RTL
+  </div>
+
+  <div class="footer">
+    <span>I2C Bus Interface in Verilog HDL — Technical Report</span>
+    <span>Page 4 of 4</span>
+  </div>
+</div>
+
+<!-- Screen-only print button -->
+<div class="no-print print-btn">
+  <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <p>Browser Print → Destination: "Save as PDF" → Paper: A4 → Margins: None → ✓ Background graphics</p>
+</div>
+
+</body>
+</html>

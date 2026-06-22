@@ -2,21 +2,12 @@
 
 // ============================================================
 // tb_i2c_system.v
-//
-// WHY sda/scl look flat in Vivado:
-//   Default sim runs only 1000 ns.  I2C needs microseconds.
-//   Fix: re-launch sim, then in Tcl Console type:  run 200us
-//   Or press F3 (Run All).
-//
-// Input bytes below go onto the SDA bus when start_demo fires:
-//   oled_wdata  = 0xA5  → written to OLED  (addr 0x3C)
-//   eeprom_ptr  = 0x00  → EEPROM pointer  (addr 0x50)
 // ============================================================
 module tb_i2c_system;
 
     // Fast I2C for simulation ONLY (hardware stays 100 kHz in top_controller default)
     localparam SIM_I2C_FREQ = 5_000_000;  // 5 MHz → SDA/SCL toggle every ~400 ns
-    localparam SIM_DELAY    = 16'd50;     // 50 clk = 1 us gap between transactions
+    localparam SIM_DELAY    = 16'd200;    // 200 clk = 4 us gap between transactions
 
     reg        clk;
     reg        rst_n;
@@ -39,7 +30,7 @@ module tb_i2c_system;
 
     pullup (sda);
     pullup (scl);
-
+    
     top_controller #(
         .INPUT_CLK_FREQ(50_000_000),
         .I2C_CLK_FREQ  (SIM_I2C_FREQ),
@@ -63,6 +54,8 @@ module tb_i2c_system;
     assign eeprom_addressed = eeprom_slave.is_addressed;
     assign oled_shift_reg   = oled_slave.shift_reg;
     assign eeprom_shift_reg = eeprom_slave.shift_reg;
+
+    // (Included at the end of the file instead to avoid nested module error)
 
     i2c_slave #(.SLAVE_ADDR(7'h3C), .READ_DATA(8'h00)) oled_slave   (.sda(sda), .scl(scl));
     i2c_slave #(.SLAVE_ADDR(7'h50), .READ_DATA(8'h42)) eeprom_slave (.sda(sda), .scl(scl));
@@ -110,14 +103,12 @@ module tb_i2c_system;
             $display("RESULT: PASSED  eeprom_data=0x%02h  oled_shift=0x%02h",
                      eeprom_data, oled_shift_reg);
         else
-            $display("RESULT: FAILED  eeprom_data=0x%02h", eeprom_data);
+            $display("RESULT: FAILED (wrong data %02h)", eeprom_data);
 
         $finish;
     end
 
-    initial begin
-        $dumpfile("i2c_sim.vcd");
-        $dumpvars(0, tb_i2c_system);
-    end
-
 endmodule
+
+// Force compilation of i2c_slave regardless of Vivado project status
+`include "i2c_slave.v"

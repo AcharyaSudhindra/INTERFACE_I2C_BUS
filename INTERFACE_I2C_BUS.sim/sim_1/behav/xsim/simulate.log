@@ -6,3 +6,19 @@ Time resolution is 1 ps
 ==================================================
 [411000 ns] start_demo HIGH
 [511000 ns] start_demo LOW  — I2C bus should start toggling now
+[1830000 ns] SLAVE 0x3c: received addr byte=0x78 addr=0x3c rw=0
+[1830000 ns] SLAVE 0x3c: ADDRESS MATCH - sending ACK
+[1830000 ns] SLAVE 0x50: received addr byte=0x78 addr=0x3c rw=0
+[1830000 ns] SLAVE 0x50: no match - NACK
+[3270000 ns] SLAVE 0x3c: received data byte=0xa5 - sending ACK
+[9190000 ns] SLAVE 0x3c: received addr byte=0xa0 addr=0x50 rw=0
+[9190000 ns] SLAVE 0x3c: no match - NACK
+[9190000 ns] SLAVE 0x50: received addr byte=0xa0 addr=0x50 rw=0
+[9190000 ns] SLAVE 0x50: ADDRESS MATCH - sending ACK
+[10630000 ns] SLAVE 0x50: received data byte=0x00 - sending ACK
+[12550000 ns] SLAVE 0x3c: received addr byte=0xa1 addr=0x50 rw=1
+[12550000 ns] SLAVE 0x3c: no match - NACK
+[12550000 ns] SLAVE 0x50: received addr byte=0xa1 addr=0x50 rw=1
+[12550000 ns] SLAVE 0x50: ADDRESS MATCH - sending ACK
+RESULT: PASSED  eeprom_data=0x42  oled_shift=0xa1
+$finish called at time : 64410 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 108

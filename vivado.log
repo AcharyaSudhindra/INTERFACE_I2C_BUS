@@ -3,10 +3,10 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Wed Jun  3 22:10:51 2026
-# Process ID         : 11064
+# Start of session at: Mon Jun 22 10:01:27 2026
+# Process ID         : 33836
 # Current directory  : C:/Projects/INTERFACE_I2C_BUS
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent19984 C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent29832 C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.xpr
 # Log file           : C:/Projects/INTERFACE_I2C_BUS/vivado.log
 # Journal file       : C:/Projects/INTERFACE_I2C_BUS\vivado.jou
 # Running On         : omen
@@ -17,9 +17,9 @@
 # CPU Physical cores : 16
 # CPU Logical cores  : 16
 # Host memory        : 25123 MB
-# Swap memory        : 8321 MB
-# Total Virtual      : 33445 MB
-# Available Virtual  : 4818 MB
+# Swap memory        : 31426 MB
+# Total Virtual      : 56550 MB
+# Available Virtual  : 34880 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.xpr
@@ -104,7 +104,6 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.5 availabl
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu102\3.3\board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu102\3.4\board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu104\1.1\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
-INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.gen/sources_1'.
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu106\2.4\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu106\2.5\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu106\2.6\board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
@@ -119,8 +118,10 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu216ld\production\2.0\board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670\2.0\board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\zcu670ld\1.0\board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
+CRITICAL WARNING: [Runs 36-271] Incremental checkpoint part, xc7k70tfbv676-1, does not match run part, xa7a75tfgg484-1I.
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.0\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\emb-plus-vpr-4616\1.1\board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:k24c:part0:1.0 available at C:/Vivado/2025.2/data/xhub/boards\XilinxBoardStore\boards\Xilinx\k24c\1.0\board.xml as part xck24-ubva530-2lv-c specified in board_part file is either invalid or not available
@@ -131,6 +132,1276 @@ WARNING: [Project 1-5713] Board part '' set for the project  is not found. Board
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Vivado/2025.2/Vivado/data/ip'.
-open_project: Time (s): cpu = 00:00:38 ; elapsed = 00:00:23 . Memory (MB): peak = 1640.008 ; gain = 183.688
-exit
-INFO: [Common 17-206] Exiting Vivado at Wed Jun  3 22:29:15 2026...
+open_project: Time (s): cpu = 00:00:40 ; elapsed = 00:00:22 . Memory (MB): peak = 1670.840 ; gain = 204.898
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:11:38 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Vivado/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_i2c_system' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_i2c_system_behav -key {Behavioral:sim_1:Functional:tb_i2c_system} -tclbatch {tb_i2c_system.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_i2c_system.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+xsim: Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 1724.934 ; gain = 13.660
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_i2c_system_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 1724.934 ; gain = 13.660
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:13:30 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Vivado/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_i2c_system' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_i2c_system_behav -key {Behavioral:sim_1:Functional:tb_i2c_system} -tclbatch {tb_i2c_system.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_i2c_system.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_i2c_system_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1748.121 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:32:56 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Vivado/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_i2c_system' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_i2c_system_behav -key {Behavioral:sim_1:Functional:tb_i2c_system} -tclbatch {tb_i2c_system.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_i2c_system.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+xsim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 3369.570 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_i2c_system_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 3369.570 ; gain = 0.000
+update_compile_order -fileset sources_1
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:33:46 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Vivado/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_i2c_system' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/i2c_master.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module i2c_master
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/top_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_i2c_system
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:33:50 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.i2c_master(I2C_FREQ=5000000)
+Compiling module xil_defaultlib.top_controller(I2C_CLK_FREQ=5000...
+Compiling module xil_defaultlib.mock_i2c_slave(READ_DATA=8'b0)
+Compiling module xil_defaultlib.mock_i2c_slave(READ_DATA=8'b0100...
+Compiling module xil_defaultlib.tb_i2c_system
+Compiling module xil_defaultlib.glbl
+INFO: [Common 17-344] 'run_program' was cancelled
+INFO: [Vivado 12-5357] 'elaborate' step aborted
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 3369.570 ; gain = 0.000
+INFO: [Common 17-344] 'relaunch_sim' was cancelled
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:34:01 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:34:03 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.i2c_master(I2C_FREQ=5000000)
+Compiling module xil_defaultlib.top_controller(I2C_CLK_FREQ=5000...
+Compiling module xil_defaultlib.mock_i2c_slave(READ_DATA=8'b0)
+Compiling module xil_defaultlib.mock_i2c_slave(READ_DATA=8'b0100...
+Compiling module xil_defaultlib.tb_i2c_system
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_i2c_system_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 3369.570 ; gain = 0.000
+run 1000 us
+Time: 2070000, SLAVE_ADDR: 3c, shift_reg: 78
+NACK! shift_reg mismatch.
+Time: 2070000, SLAVE_ADDR: 50, shift_reg: 78
+NACK! shift_reg mismatch.
+RESULT: FAILED (NACK)
+$finish called at time : 52250 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 116
+run 1000 us
+run 1000000 us
+[2000000000 ns] WATCHDOG timeout
+$finish called at time : 2 ms : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 79
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:35:14 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:35:17 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3369.570 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:35:44 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:35:47 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3369.570 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:38:11 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:38:14 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 3369.570 ; gain = 0.000
+run 200us
+Time: 2070000, SLAVE_ADDR: 3c, shift_reg: 78
+NACK! shift_reg mismatch.
+Time: 2070000, SLAVE_ADDR: 50, shift_reg: 78
+NACK! shift_reg mismatch.
+RESULT: FAILED (NACK)
+$finish called at time : 52250 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 116
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:39:26 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Vivado/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_i2c_system' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_i2c_system_behav -key {Behavioral:sim_1:Functional:tb_i2c_system} -tclbatch {tb_i2c_system.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_i2c_system.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_i2c_system_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 3382.574 ; gain = 0.000
+add_files -fileset sources_1 {C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/mock_i2c_slave.v}
+ERROR: [Vivado 12-172] File or Directory 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface' does not exist
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:42:43 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Vivado/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_i2c_system' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_i2c_system_behav -key {Behavioral:sim_1:Functional:tb_i2c_system} -tclbatch {tb_i2c_system.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_i2c_system.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_i2c_system_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 3382.574 ; gain = 0.000
+run 200us
+Time: 2070000, SLAVE_ADDR: 3c, shift_reg: 78
+NACK! shift_reg mismatch.
+Time: 2070000, SLAVE_ADDR: 50, shift_reg: 78
+NACK! shift_reg mismatch.
+RESULT: FAILED (NACK)
+$finish called at time : 52250 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 116
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:43:24 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:43:27 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 3387.863 ; gain = 5.289
+run 200us
+Time: 2070000, SLAVE_ADDR: 3c, shift_reg: 78
+NACK! shift_reg mismatch.
+Time: 2070000, SLAVE_ADDR: 50, shift_reg: 78
+NACK! shift_reg mismatch.
+RESULT: FAILED (NACK)
+$finish called at time : 52250 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 116
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:43:44 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Vivado/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_i2c_system' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_i2c_system_behav -key {Behavioral:sim_1:Functional:tb_i2c_system} -tclbatch {tb_i2c_system.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_i2c_system.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_i2c_system_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 3387.863 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:44:15 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:44:18 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3388.070 ; gain = 0.000
+run 200us
+Time: 2070000, SLAVE_ADDR: 3c, shift_reg: 78
+NACK! shift_reg mismatch.
+Time: 2070000, SLAVE_ADDR: 50, shift_reg: 78
+NACK! shift_reg mismatch.
+RESULT: FAILED (NACK)
+$finish called at time : 52250 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 116
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:59:12 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:59:16 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+Time: 2070000, SLAVE_ADDR: 3c, shift_reg: 78
+NACK! shift_reg mismatch.
+Time: 2070000, SLAVE_ADDR: 50, shift_reg: 78
+NACK! shift_reg mismatch.
+RESULT: FAILED (NACK)
+$finish called at time : 52250 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 116
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 3388.242 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:59:42 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 10:59:44 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+Time: 2070000, SLAVE_ADDR: 3c, shift_reg: 78
+NACK! shift_reg mismatch.
+Time: 2070000, SLAVE_ADDR: 50, shift_reg: 78
+NACK! shift_reg mismatch.
+RESULT: FAILED (NACK)
+$finish called at time : 52250 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 116
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 3388.477 ; gain = 0.000
+run 200us
+set_property -name {xsim.simulate.runtime} -value {200us} -objects [get_filesets sim_1]
+add_files -fileset sources_1 "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/mock_i2c_slave.v"
+ERROR: [Vivado 12-172] File or Directory 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface' does not exist
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+save_wave_config {C:/Projects/INTERFACE_I2C_BUS/tb_i2c_system_behav.wcfg}
+set_property is_enabled true [get_files "i2c_slave.v"]
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 11:26:40 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/i2c_master.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module i2c_master
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/top_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_i2c_system
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 11:26:43 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.i2c_master(I2C_FREQ=5000000)
+Compiling module xil_defaultlib.top_controller(I2C_CLK_FREQ=5000...
+Compiling module xil_defaultlib.mock_i2c_slave(READ_DATA=8'b0)
+Compiling module xil_defaultlib.mock_i2c_slave(READ_DATA=8'b0100...
+Compiling module xil_defaultlib.tb_i2c_system
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_i2c_system_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+Time: 2070000, SLAVE_ADDR: 3c, shift_reg: 78
+NACK! shift_reg mismatch.
+Time: 2070000, SLAVE_ADDR: 50, shift_reg: 78
+NACK! shift_reg mismatch.
+RESULT: FAILED (NACK)
+$finish called at time : 52250 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 116
+relaunch_sim: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 3390.031 ; gain = 0.000
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+update_compile_order -fileset sources_1
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 11:54:42 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/i2c_master.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module i2c_master
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/top_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_i2c_system
+INFO: [VRFC 10-311] analyzing module mock_i2c_slave
+ERROR: [VRFC 10-8610] 'nested module' is not allowed in this dialect; use SystemVerilog mode instead [C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/mock_i2c_slave.v:14]
+ERROR: [VRFC 10-8530] module 'tb_i2c_system' is ignored due to previous errors [C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v:6]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 11:55:27 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/i2c_master.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module i2c_master
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/top_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_i2c_system
+INFO: [VRFC 10-311] analyzing module mock_i2c_slave
+ERROR: [VRFC 10-8610] 'nested module' is not allowed in this dialect; use SystemVerilog mode instead [C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/mock_i2c_slave.v:14]
+ERROR: [VRFC 10-8530] module 'tb_i2c_system' is ignored due to previous errors [C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v:6]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 11:56:25 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/i2c_master.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module i2c_master
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/top_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_i2c_system
+INFO: [VRFC 10-311] analyzing module mock_i2c_slave
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 11:56:27 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.i2c_master(I2C_FREQ=5000000)
+Compiling module xil_defaultlib.top_controller(I2C_CLK_FREQ=5000...
+Compiling module xil_defaultlib.mock_i2c_slave
+Compiling module xil_defaultlib.tb_i2c_system
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_i2c_system_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+[630000 ns] SLAVE 0x3c: START detected
+[630000 ns] SLAVE 0x50: START detected
+[1910000 ns] SLAVE 0x3c: ADDRESS MATCH 0x3c rw=0 — ACK
+[1910000 ns] SLAVE 0x50: no match (got 0x3c) — NACK
+[2070000 ns] SLAVE 0x3c: received data 0x78 — ACK
+[3350000 ns] SLAVE 0x50: no match (got 0xX2) — NACK
+[3510000 ns] SLAVE 0x3c: no match (got 0x25) — NACK
+RESULT: FAILED (NACK)
+$finish called at time : 53690 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 108
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 3403.984 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 11:57:05 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 11:57:06 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+[630000 ns] SLAVE 0x3c: START detected
+[630000 ns] SLAVE 0x50: START detected
+[1910000 ns] SLAVE 0x3c: ADDRESS MATCH 0x3c rw=0 — ACK
+[1910000 ns] SLAVE 0x50: no match (got 0x3c) — NACK
+[2070000 ns] SLAVE 0x3c: received data 0x78 — ACK
+[3350000 ns] SLAVE 0x50: no match (got 0xX2) — NACK
+[3510000 ns] SLAVE 0x3c: no match (got 0x25) — NACK
+RESULT: FAILED (NACK)
+$finish called at time : 53690 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 108
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 3403.984 ; gain = 0.000
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_slave.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_slave.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 12:07:11 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/i2c_master.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module i2c_master
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/top_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_i2c_system
+INFO: [VRFC 10-311] analyzing module mock_i2c_slave
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 12:07:13 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.i2c_master(I2C_FREQ=5000000)
+Compiling module xil_defaultlib.top_controller(I2C_CLK_FREQ=5000...
+Compiling module xil_defaultlib.mock_i2c_slave
+Compiling module xil_defaultlib.tb_i2c_system
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_i2c_system_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+[630000 ns] SLAVE 0x3c: START detected
+[630000 ns] SLAVE 0x50: START detected
+[1910000 ns] SLAVE 0x3c: no match (got 0xXX) — NACK
+[1910000 ns] SLAVE 0x50: no match (got 0xXX) — NACK
+RESULT: FAILED (NACK)
+$finish called at time : 52250 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 108
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 3481.938 ; gain = 0.000
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_slave.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_slave.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_slave.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_master.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_slave.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_slave.v:]
+ERROR: [Common 17-180] Spawn failed: The operation completed successfully.
+
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_slave.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_master.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_master.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_master.v:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_slave.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_master.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_slave.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\i2c_master.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\tb_i2c_system.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.srcs\sources_1\imports\interface i2c\top_controller.v:]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Jun 22 12:18:21 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_i2c_system'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Vivado/2025.2/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_i2c_system' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_i2c_system_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/i2c_master.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module i2c_master
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/i2c_slave.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module i2c_slave
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/top_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_i2c_system
+INFO: [VRFC 10-311] analyzing module i2c_slave
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'i2c_slave' [C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/i2c_slave.v:9]
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.i2c_master(I2C_FREQ=5000000)
+Compiling module xil_defaultlib.top_controller(I2C_CLK_FREQ=5000...
+Compiling module xil_defaultlib.i2c_slave(READ_DATA=8'b0)
+Compiling module xil_defaultlib.i2c_slave(READ_DATA=8'b01000010)
+Compiling module xil_defaultlib.tb_i2c_system
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_i2c_system_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_i2c_system_behav -key {Behavioral:sim_1:Functional:tb_i2c_system} -tclbatch {tb_i2c_system.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_i2c_system.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 200us
+==================================================
+  I2C test — sim I2C 5 MHz
+  Input: oled_wdata=0xxx  eeprom_ptr=0xxx
+  Run at least 200 us in Vivado to see sda/scl toggle
+==================================================
+[411000 ns] start_demo HIGH
+[511000 ns] start_demo LOW  — I2C bus should start toggling now
+[1830000 ns] SLAVE 0x3c: received addr byte=0x78 addr=0x3c rw=0
+[1830000 ns] SLAVE 0x3c: ADDRESS MATCH - sending ACK
+[1830000 ns] SLAVE 0x50: received addr byte=0x78 addr=0x3c rw=0
+[1830000 ns] SLAVE 0x50: no match - NACK
+[3270000 ns] SLAVE 0x3c: received data byte=0xa5 - sending ACK
+[9190000 ns] SLAVE 0x3c: received addr byte=0xa0 addr=0x50 rw=0
+[9190000 ns] SLAVE 0x3c: no match - NACK
+[9190000 ns] SLAVE 0x50: received addr byte=0xa0 addr=0x50 rw=0
+[9190000 ns] SLAVE 0x50: ADDRESS MATCH - sending ACK
+[10630000 ns] SLAVE 0x50: received data byte=0x00 - sending ACK
+[12550000 ns] SLAVE 0x3c: received addr byte=0xa1 addr=0x50 rw=1
+[12550000 ns] SLAVE 0x3c: no match - NACK
+[12550000 ns] SLAVE 0x50: received addr byte=0xa1 addr=0x50 rw=1
+[12550000 ns] SLAVE 0x50: ADDRESS MATCH - sending ACK
+RESULT: PASSED  eeprom_data=0x42  oled_shift=0xa1
+$finish called at time : 64410 ns : File "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/tb_i2c_system.v" Line 108
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_i2c_system_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 200us
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 3481.938 ; gain = 0.000

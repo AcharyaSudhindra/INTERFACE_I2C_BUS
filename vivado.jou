@@ -3,10 +3,10 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Wed Jun  3 22:10:51 2026
-# Process ID         : 11064
+# Start of session at: Mon Jun 22 10:01:27 2026
+# Process ID         : 33836
 # Current directory  : C:/Projects/INTERFACE_I2C_BUS
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent19984 C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent29832 C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.xpr
 # Log file           : C:/Projects/INTERFACE_I2C_BUS/vivado.log
 # Journal file       : C:/Projects/INTERFACE_I2C_BUS\vivado.jou
 # Running On         : omen
@@ -17,9 +17,63 @@
 # CPU Physical cores : 16
 # CPU Logical cores  : 16
 # Host memory        : 25123 MB
-# Swap memory        : 8321 MB
-# Total Virtual      : 33445 MB
-# Available Virtual  : 4818 MB
+# Swap memory        : 31426 MB
+# Total Virtual      : 56550 MB
+# Available Virtual  : 34880 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_i2c_system.tcl
+close_sim
+launch_simulation
+source tb_i2c_system.tcl
+close_sim
+launch_simulation
+source tb_i2c_system.tcl
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+run 1000 us
+run 1000 us
+run 1000000 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 200us
+close_sim
+launch_simulation
+source tb_i2c_system.tcl
+add_files -fileset sources_1 {C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/mock_i2c_slave.v}
+close_sim
+launch_simulation
+source tb_i2c_system.tcl
+run 200us
+relaunch_sim
+run 200us
+close_sim
+launch_simulation
+source tb_i2c_system.tcl
+relaunch_sim
+run 200us
+relaunch_sim
+relaunch_sim
+run 200us
+set_property -name {xsim.simulate.runtime} -value {200us} -objects [get_filesets sim_1]
+add_files -fileset sources_1 "C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.srcs/sources_1/imports/interface i2c/mock_i2c_slave.v"
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+save_wave_config {C:/Projects/INTERFACE_I2C_BUS/tb_i2c_system_behav.wcfg}
+set_property is_enabled true [get_files "i2c_slave.v"]
+relaunch_sim
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source tb_i2c_system.tcl

@@ -1,0 +1,1 @@
+--debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "tb_i2c_system_behav_codex_check" "xil_defaultlib.tb_i2c_system" "xil_defaultlib.glbl" -log "elaborate_codex_check.log" 

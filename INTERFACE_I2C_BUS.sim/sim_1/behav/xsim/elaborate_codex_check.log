@@ -1,0 +1,20 @@
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_i2c_system_behav_codex_check xil_defaultlib.tb_i2c_system xil_defaultlib.glbl -log elaborate_codex_check.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.i2c_master(I2C_FREQ=5000000)
+Compiling module xil_defaultlib.top_controller(I2C_CLK_FREQ=5000...
+Compiling module xil_defaultlib.i2c_slave(READ_DATA=8'b0)
+Compiling module xil_defaultlib.i2c_slave(READ_DATA=8'b01000010)
+Compiling module xil_defaultlib.tb_i2c_system
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_i2c_system_behav_codex_check
+Could not remove the obj directory: boost::filesystem::remove: Access is denied: "xsim.dir/tb_i2c_system_behav_codex_check/obj\xsim_0.win64.obj"
+

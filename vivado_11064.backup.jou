@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Jun  3 22:10:51 2026
+# Process ID         : 11064
+# Current directory  : C:/Projects/INTERFACE_I2C_BUS
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent19984 C:\Projects\INTERFACE_I2C_BUS\INTERFACE_I2C_BUS.xpr
+# Log file           : C:/Projects/INTERFACE_I2C_BUS/vivado.log
+# Journal file       : C:/Projects/INTERFACE_I2C_BUS\vivado.jou
+# Running On         : omen
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) Ultra 7 255H
+# CPU Frequency      : 3686 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 16
+# Host memory        : 25123 MB
+# Swap memory        : 8321 MB
+# Total Virtual      : 33445 MB
+# Available Virtual  : 4818 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Projects/INTERFACE_I2C_BUS/INTERFACE_I2C_BUS.xpr

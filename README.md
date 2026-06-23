@@ -1,6 +1,5 @@
 # I2C Bus Interface in Verilog HDL
 
-**Author:** Acharya Sudhindra  
 **Repository:** AcharyaSudhindra/INTERFACE_I2C_BUS  
 **Tool:** Xilinx Vivado 2024 + xSim Simulator  
 **Language:** Verilog HDL (IEEE 1364-2001)  
@@ -191,4 +190,3 @@ During development, several critical hardware and simulation bugs were found and
 - **Repeated START:** Supporting multi-byte burst transfers without releasing the bus.
 - **10-bit addressing:** Extending beyond the current 7-bit limitation.
 - **Fast Mode Support:** Timing validation for 400 kHz (Fast Mode) or 1 MHz (Fast Mode Plus).
-- **FPGA Synthesis Constraints:** Adding XDC files and IOBUF primitives for real hardware implementation.
